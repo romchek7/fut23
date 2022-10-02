@@ -9,9 +9,11 @@ function App() {
     return (
         <div className="App">
             <Navigation/>
-            <Routes>
-                <Route path={'/players'} element={<Players/>}/>
-            </Routes>
+            <div className="AppContent">
+                <Routes>
+                    <Route path={'/players'} element={<Players/>}/>
+                </Routes>
+            </div>
         </div>
     );
 }

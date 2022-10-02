@@ -1,0 +1,24 @@
+.playersMain {
+    width: 100%;
+    display: flex;
+}
+
+.filtersMain {
+    width: 20%;
+}
+
+.playersListMain {
+    width: 80%;
+}
+
+.playersWrapper {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 50px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
