@@ -22,3 +22,19 @@
     align-content: space-evenly;
     align-items: center;
 }
+
+.paginationWrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paginationWrapper select {
+    margin: 20px;
+    border-style: solid;
+    border-color: rgb(14, 82, 53);
+}
