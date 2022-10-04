@@ -5,7 +5,7 @@ import useDispatchPlayers from "../../hooks/useDispatchPlayers";
 import {IPlayer} from "../../redux/types/playersType";
 import Player from "./Player/Player";
 import styles from "./Players.module.css";
-import {Pagination} from 'antd';
+import PaginationFC from "../assets/Pagination/Pagination";
 
 const Players: React.FC = () => {
     const {fetchPlayers} = useDispatchPlayers()
@@ -39,6 +39,14 @@ const Players: React.FC = () => {
         window.scrollTo({behavior: 'smooth', top: 0})
     };
 
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    if (error) {
+        return <div>Some error: {error}</div>
+    }
+
     return (
         <div className={styles.playersMain}>
             <div className={styles.filtersMain}>
@@ -50,18 +58,9 @@ const Players: React.FC = () => {
                         && idx < maxIndex
                         && <Player player={player}/>)}
                 </div>
-                <div className={styles.paginationWrapper}>
-                    <select id="items" onChange={
-                        (e) => {
-                            setPageSize(+e.target.value)
-                        }
-                    }>
-                        <option value={12}>12</option>
-                        <option value={24}>24</option>
-                    </select>
-                    <Pagination pageSize={pageSize} showSizeChanger={false} current={currentPage} onChange={handleChange}
-                                total={players.length}/>
-                </div>
+                <PaginationFC setPageSize={setPageSize} pageSize={pageSize} currentPage={currentPage}
+                              totalCount={players.length} setCurrentPage={setCurrentPage}
+                              setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
             </div>
         </div>
     )
