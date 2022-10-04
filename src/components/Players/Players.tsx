@@ -7,6 +7,7 @@ import Player from "./Player/Player";
 import styles from "./Players.module.css";
 import PaginationFC from "../assets/Pagination/Pagination";
 import Countries from "./Countries/Countries";
+import AgeFilters from "./AgeFilters/AgeFilters";
 
 const Players: React.FC = () => {
     const {fetchPlayers} = useDispatchPlayers()
@@ -19,12 +20,19 @@ const Players: React.FC = () => {
     const [pageSize, setPageSize] = useState(12)
     const [county_id, setCountryID] = useState(0)
     const [continentIsReadyToFetch, setContinent] = useState('')
+    const [minAge, setMinAge] = useState(0)
+    const [maxAge, setMaxAge] = useState(0)
 
     useEffect(() => {
         if (county_id != 0) {
-            fetchPlayers(county_id)
+            if (minAge > 0 && maxAge > 0) {
+                fetchPlayers(county_id, maxAge, minAge)
+            }
+            else {
+                fetchPlayers(county_id)
+            }
         }
-    }, [county_id])
+    }, [county_id, minAge, maxAge])
 
     useEffect(() => {
         if (players.length > 0) {
@@ -45,6 +53,7 @@ const Players: React.FC = () => {
             <div className={styles.filtersMain}>
                 <Countries county_id={county_id} setCountryID={setCountryID}
                            continentIsReadyToFetch={continentIsReadyToFetch} setContinent={setContinent}/>
+                <AgeFilters setMinAge={setMinAge} setMaxAge={setMaxAge} minAge={minAge} maxAge={maxAge}/>
             </div>
             {county_id != 0
                 ? <div className={styles.playersListMain}>

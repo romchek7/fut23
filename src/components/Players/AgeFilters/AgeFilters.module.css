@@ -1,0 +1,25 @@
+.filtersMain {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filtersForm {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtersForm div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtersForm div input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-color: rgb(14, 82, 53);
+}

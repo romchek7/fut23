@@ -54,6 +54,7 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
     return (
         <div className={styles.filtersMain}>
             <div className={styles.filters}>
+                <h1>Country:</h1>
                 {continents.map(continent =>
                     <div key={continent} className={styles.listOfCountriesAndContinents}>
                         <div className={styles.continents}>
@@ -74,9 +75,6 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
                                 </div>) : <span></span>}
                         </div>
                     </div>)}
-            </div>
-            <div>
-                age filters
             </div>
         </div>
     )

@@ -7,9 +7,25 @@
 }
 
 .filters {
-    height: 600px;
+    height: 500px;
     width: 70%;
     overflow: auto;
+}
+
+.filters::-webkit-scrollbar {
+    width: 10px;
+}
+
+.filters::-webkit-scrollbar-track {
+    background-color: rgb(235, 235, 235);
+}
+
+.filters::-webkit-scrollbar-thumb {
+    background: rgb(14, 82, 53);
+}
+
+.filters::-webkit-scrollbar-thumb:hover {
+    background: rgb(10, 61, 44);
 }
 
 .listOfCountriesAndContinents {

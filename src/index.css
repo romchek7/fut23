@@ -13,3 +13,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.SearchBtn {
+  background-color: rgb(14, 82, 53);
+  color: rgb(255, 255, 255);
+  border-style: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.SearchBtn:hover {
+  background-color: rgb(49, 201, 141);
+  color: rgb(14, 82, 53);
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled],
+button:disabled:hover,
+button[disabled]:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
