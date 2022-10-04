@@ -6,38 +6,31 @@ import {IPlayer} from "../../redux/types/playersType";
 import Player from "./Player/Player";
 import styles from "./Players.module.css";
 import PaginationFC from "../assets/Pagination/Pagination";
+import Countries from "./Countries/Countries";
 
 const Players: React.FC = () => {
     const {fetchPlayers} = useDispatchPlayers()
 
     const {players, loading, error} = useSelector(fetchPlayersSelector)
 
-    const [playersState, setPlayersState] = useState<IPlayer[]>([])
-    const [previous, setPrevious] = useState(0)
-    const [next, setNext] = useState(12)
-    const [totalPage, setTotalPage] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
     const [minIndex, setMinIndex] = useState(0)
     const [maxIndex, setMaxIndex] = useState(0)
     const [pageSize, setPageSize] = useState(12)
+    const [county_id, setCountryID] = useState(0)
+    const [continentIsReadyToFetch, setContinent] = useState('')
 
     useEffect(() => {
-        fetchPlayers(48)
-    }, [])
+        if (county_id != 0) {
+            fetchPlayers(county_id)
+        }
+    }, [county_id])
 
     useEffect(() => {
         if (players.length > 0) {
-            setTotalPage(players.length / pageSize)
             setMaxIndex(pageSize)
         }
     }, [players, pageSize])
-
-    const handleChange = (page: number) => {
-        setCurrentPage(page)
-        setMinIndex((page - 1) * pageSize)
-        setMaxIndex(page * pageSize)
-        window.scrollTo({behavior: 'smooth', top: 0})
-    };
 
     if (loading) {
         return <div>Loading...</div>
@@ -50,18 +43,21 @@ const Players: React.FC = () => {
     return (
         <div className={styles.playersMain}>
             <div className={styles.filtersMain}>
-
+                <Countries county_id={county_id} setCountryID={setCountryID}
+                           continentIsReadyToFetch={continentIsReadyToFetch} setContinent={setContinent}/>
             </div>
-            <div className={styles.playersListMain}>
-                <div className={styles.playersWrapper}>
-                    {players.map((player, idx) => idx >= minIndex
-                        && idx < maxIndex
-                        && <Player player={player}/>)}
+            {county_id != 0
+                ? <div className={styles.playersListMain}>
+                    <div className={styles.playersWrapper}>
+                        {players.map((player, idx) => idx >= minIndex
+                            && idx < maxIndex
+                            && <Player key={player.player_id} player={player}/>)}
+                    </div>
+                    <PaginationFC setPageSize={setPageSize} pageSize={pageSize} currentPage={currentPage}
+                                  totalCount={players.length} setCurrentPage={setCurrentPage}
+                                  setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                 </div>
-                <PaginationFC setPageSize={setPageSize} pageSize={pageSize} currentPage={currentPage}
-                              totalCount={players.length} setCurrentPage={setCurrentPage}
-                              setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
-            </div>
+                : <div>Select country</div>}
         </div>
     )
 }

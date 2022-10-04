@@ -19,7 +19,7 @@ const PaginationFC: React.FC <PaginationProps> = ({setPageSize, pageSize, curren
         setMinIndex((page - 1) * pageSize)
         setMaxIndex(page * pageSize)
         window.scrollTo({behavior: 'smooth', top: 0})
-    };
+    }
 
     return (
         <div className={styles.paginationWrapper}>

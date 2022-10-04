@@ -27,19 +27,19 @@
 
 .cardWrapper img {
     position: absolute;
-    top: -70px;
-    right: 35px;
-    height: 90px;
-    width: 90px;
+    top: -65px;
+    right: 62px;
+    height: 50px;
+    width: 50px;
 }
 
 .cardWrapper span {
     position: absolute;
-    left: 41px;
-    top: -20px;
+    left: 63px;
+    top: -45px;
 }
 
 .card {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
 }

@@ -1,0 +1,30 @@
+.filtersMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.filters {
+    height: 600px;
+    width: 70%;
+    overflow: auto;
+}
+
+.listOfCountriesAndContinents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.continents {
+    width: 100%;
+    font-weight: bold;
+}
+
+.countries {
+    width: 90%;
+}
