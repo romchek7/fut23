@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import useDispatchCountries from "../../../hooks/useDispatchCountries";
-import {fetchCountriesSelector} from "../../../redux/selectors/countriesSelector";
+import useDispatchCountries from "../../hooks/useDispatchCountries";
+import {fetchCountriesSelector} from "../../redux/selectors/countriesSelector";
 import {useSelector} from "react-redux";
 import styles from "./Countries.module.css";
 
@@ -21,6 +21,9 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
     useEffect(() => {
         if (continentIsReadyToFetch != '') {
             fetchCountries(continentIsReadyToFetch)
+        }
+        else {
+            setCountryID(0)
         }
     }, [continentIsReadyToFetch])
 

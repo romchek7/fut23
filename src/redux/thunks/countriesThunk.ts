@@ -11,9 +11,9 @@ export const fetchCountries = (continent?: string) => {
 
             const response = await getCountries(continent)
 
-            const countries = Object.values(response.data.data) as ICountry[]
-
             if (response) {
+                const countries = Object.values(response.data.data) as ICountry[]
+
                 dispatch({
                     type: fetchCountriesActionTypes.FETCH_COUNTRIES_SUCCESS,
                     payload: countries

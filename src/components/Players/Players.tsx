@@ -2,11 +2,10 @@ import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import {fetchPlayersSelector} from "../../redux/selectors/playersSelector";
 import useDispatchPlayers from "../../hooks/useDispatchPlayers";
-import {IPlayer} from "../../redux/types/playersType";
 import Player from "./Player/Player";
 import styles from "./Players.module.css";
 import PaginationFC from "../assets/Pagination/Pagination";
-import Countries from "./Countries/Countries";
+import Countries from "../Countries/Countries";
 import AgeFilters from "./AgeFilters/AgeFilters";
 
 const Players: React.FC = () => {
@@ -66,7 +65,11 @@ const Players: React.FC = () => {
                                   totalCount={players.length} setCurrentPage={setCurrentPage}
                                   setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                 </div>
-                : <div>Select country</div>}
+                : <div className={styles.SelectCountry}>
+                    <p>
+                        Select country
+                    </p>
+                </div>}
         </div>
     )
 }

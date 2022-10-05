@@ -9,10 +9,12 @@ export const fetchPlayers = (country_id: number, max_age?: number, min_age?: num
 
             const response = await getPlayersAPI(country_id, max_age, min_age)
 
-            dispatch({
-                type: fetchPlayersActionTypes.FETCH_PLAYERS_SUCCESS,
-                payload: response.data.data
-            })
+            if (response) {
+                dispatch({
+                    type: fetchPlayersActionTypes.FETCH_PLAYERS_SUCCESS,
+                    payload: response.data.data
+                })
+            }
         }
         catch (e) {
             dispatch({

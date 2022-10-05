@@ -23,14 +23,6 @@ const PaginationFC: React.FC <PaginationProps> = ({setPageSize, pageSize, curren
 
     return (
         <div className={styles.paginationWrapper}>
-            <select id="items" onChange={
-                (e) => {
-                    setPageSize(+e.target.value)
-                }
-            }>
-                <option value={12}>12</option>
-                <option value={24}>24</option>
-            </select>
             <Pagination pageSize={pageSize} showSizeChanger={false} current={currentPage} onChange={handleChange}
                         total={totalCount}/>
         </div>

@@ -1,4 +1,4 @@
-.playersMain {
+.main {
     width: 100%;
     display: flex;
 }
@@ -7,11 +7,12 @@
     width: 20%;
 }
 
-.playersListMain {
+.content {
     width: 80%;
+    margin-left: 20px;
 }
 
-.playersWrapper {
+.leaguesWrapper {
     margin-top: 20px;
     width: 100%;
     display: grid;
@@ -23,14 +24,14 @@
     align-items: center;
 }
 
-.SelectCountry {
-    width: 80%;
-    height: 500px;
+.leagueBox {
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(14, 82, 53);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.SelectCountry p {
-    font-size: 20px;
+    flex-direction: column;
 }
