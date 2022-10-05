@@ -32,6 +32,12 @@
     border-color: rgb(14, 82, 53);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
+}
+
+.ShowSeasonsNavlink {
+    justify-content: flex-end;
+    margin-top: auto;
+    margin-bottom: 10px;
 }

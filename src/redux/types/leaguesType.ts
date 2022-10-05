@@ -6,8 +6,8 @@ export interface ILeague {
 
 export interface ILeaguesState {
     leagues: ILeague[]
-    loadingLeague: boolean
-    errorLeague: null | string
+    loadingLeagues: boolean
+    errorLeagues: null | string
 }
 
 export enum getLeaguesActionType {
@@ -31,3 +31,31 @@ interface FetchLeaguesError {
 }
 
 export type LeaguesActionTypes = FetchLeagues | FetchLeaguesSuccess | FetchLeaguesError
+
+export interface ILeagueState {
+    league: ILeague | null
+    loadingLeague: boolean
+    errorLeague: null | string
+}
+
+export enum getLeagueActionType {
+    FETCH_LEAGUE='FETCH_LEAGUE',
+    FETCH_LEAGUE_SUCCESS='FETCH_LEAGUE_SUCCESS',
+    FETCH_LEAGUE_ERROR='FETCH_LEAGUE_ERROR'
+}
+
+interface FetchLeague {
+    type: getLeagueActionType.FETCH_LEAGUE
+}
+
+interface FetchLeagueSuccess {
+    type: getLeagueActionType.FETCH_LEAGUE_SUCCESS
+    payload: any
+}
+
+interface FetchLeagueError {
+    type: getLeagueActionType.FETCH_LEAGUE_ERROR
+    payload: string
+}
+
+export type LeagueActionTypes = FetchLeague | FetchLeagueSuccess | FetchLeagueError

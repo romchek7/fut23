@@ -32,3 +32,31 @@ export interface IFetchCountriesError {
 }
 
 export type CountriesActionTypes = IFetchCountries | IFetchCountriesSuccess | IFetchCountriesError
+
+export interface ICountryState {
+    country: ICountry | null
+    loadingCountry: boolean
+    errorCountry: null | string
+}
+
+export enum fetchCountryActionTypes {
+    FETCH_COUNTRY='FETCH_COUNTRY',
+    FETCH_COUNTRY_SUCCESS='FETCH_COUNTRY_SUCCESS',
+    FETCH_COUNTRY_ERROR='FETCH_COUNTRY_ERROR'
+}
+
+export interface IFetchCountry {
+    type: fetchCountryActionTypes.FETCH_COUNTRY
+}
+
+export interface IFetchCountrySuccess {
+    type: fetchCountryActionTypes.FETCH_COUNTRY_SUCCESS
+    payload: any
+}
+
+export interface IFetchCountryError {
+    type: fetchCountryActionTypes.FETCH_COUNTRY_ERROR
+    payload: string
+}
+
+export type CountryActionTypes = IFetchCountry | IFetchCountrySuccess | IFetchCountryError

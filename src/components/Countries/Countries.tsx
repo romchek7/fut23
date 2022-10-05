@@ -61,20 +61,24 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
                 {continents.map(continent =>
                     <div key={continent} className={styles.listOfCountriesAndContinents}>
                         <div className={styles.continents}>
-                            <input type='checkbox'
-                                   id={continent}
-                                   name={continent}
-                                   checked={continent === continentIsReadyToFetch}
-                                   onChange={handleChangeContinentInput}/> {continent}
+                            <span>
+                                <input type='checkbox'
+                                       id={continent}
+                                       name={continent}
+                                       checked={continent === continentIsReadyToFetch}
+                                       onChange={handleChangeContinentInput}/> {continent}
+                            </span>
                         </div>
                         <div className={styles.countries}>
                             {countries.length != 0 && continent === continentIsReadyToFetch ? countries.map(country =>
                                 <div key={country.country_id}>
-                                    <input type='checkbox'
-                                           id={`${country.country_id}`}
-                                           name={`${country.country_id}`}
-                                           checked={country.country_id === county_id}
-                                           onChange={handleChangeCountryFilter}/> {country.name}
+                                    <span>
+                                        <input type='checkbox'
+                                               id={`${country.country_id}`}
+                                               name={`${country.country_id}`}
+                                               checked={country.country_id === county_id}
+                                               onChange={handleChangeCountryFilter}/> {country.name}
+                                    </span>
                                 </div>) : <span></span>}
                         </div>
                     </div>)}

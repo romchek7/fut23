@@ -44,3 +44,11 @@
 .countries {
     width: 90%;
 }
+
+.continents span:hover, .countries div span:hover {
+    color: rgb(49, 201, 141);
+}
+
+.continents span input:hover, .countries div span input:hover {
+    cursor: pointer;
+}

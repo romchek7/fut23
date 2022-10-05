@@ -3,8 +3,8 @@ import {IAction} from "../types/types";
 
 const initialState: ILeaguesState = {
     leagues: [],
-    loadingLeague: false,
-    errorLeague: null
+    loadingLeagues: false,
+    errorLeagues: null
 }
 
 const leaguesReducer = (state = initialState, action: IAction): ILeaguesState => {
@@ -13,22 +13,22 @@ const leaguesReducer = (state = initialState, action: IAction): ILeaguesState =>
             return {
                 ...state,
                 leagues: [],
-                loadingLeague: true,
-                errorLeague: null
+                loadingLeagues: true,
+                errorLeagues: null
             }
         case getLeaguesActionType.FETCH_LEAGUES_SUCCESS:
             return {
                 ...state,
                 leagues: action.payload,
-                loadingLeague: false,
-                errorLeague: null
+                loadingLeagues: false,
+                errorLeagues: null
             }
         case getLeaguesActionType.FETCH_LEAGUES_ERROR:
             return {
                 ...state,
                 leagues: [],
-                loadingLeague: false,
-                errorLeague: action.payload
+                loadingLeagues: false,
+                errorLeagues: action.payload
             }
         default:
             return state

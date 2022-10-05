@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 import {getLeagues} from "../../redux/selectors/leaguesSelector";
 import Countries from "../Countries/Countries";
 import {ILeague} from "../../redux/types/leaguesType";
+import {NavLink} from "react-router-dom";
 
 interface LeagueProps {
     leagues: ILeague[]
@@ -16,6 +17,9 @@ const League: React.FC <LeagueProps> = ({leagues}) => {
             {leagues.map(league =>
                 <div className={styles.leagueBox}>
                     {league.name}
+                    <NavLink className={styles.ShowSeasonsNavlink} to={`/seasons/${league.league_id}`}>
+                        <button className='SearchBtn'>Show seasons</button>
+                    </NavLink>
                 </div>
             )}
         </div>
@@ -25,7 +29,7 @@ const League: React.FC <LeagueProps> = ({leagues}) => {
 const Leagues: React.FC = () => {
     const {fetchLeagues} = useDispatchLeagues()
 
-    const {leagues, loadingLeague, errorLeague} = useSelector(getLeagues)
+    const {leagues, loadingLeagues, errorLeagues} = useSelector(getLeagues)
 
     const [county_id, setCountryID] = useState(0)
     const [continentIsReadyToFetch, setContinent] = useState('')
@@ -44,12 +48,12 @@ const Leagues: React.FC = () => {
         }
     }, [county_id])
 
-    if (loadingLeague) {
+    if (loadingLeagues) {
         return <div>Loading...</div>
     }
 
-    if (errorLeague) {
-        return <div>{errorLeague}</div>
+    if (errorLeagues) {
+        return <div>{errorLeagues}</div>
     }
 
     return (

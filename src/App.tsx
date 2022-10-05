@@ -1,10 +1,10 @@
 import React from 'react';
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Players from './components/Players/Players';
-import logo from './logo.svg';
 import Navigation from "./components/Navigation/Navigation";
 import './App.css';
 import Leagues from "./components/Leagues/Leagues";
+import Seasons from "./components/Seasons/Seasons";
 
 function App() {
     return (
@@ -14,6 +14,9 @@ function App() {
                 <Routes>
                     <Route path={'/players'} element={<Players/>}/>
                     <Route path={'/leagues'} element={<Leagues/>}/>
+                    <Route path='/seasons' element={<Seasons/>}>
+                        <Route path=':league_id' element={<Seasons/>}/>
+                    </Route>
                 </Routes>
             </div>
         </div>
