@@ -7,20 +7,24 @@ import bookmakers from "../../assets/img/bookmakers.jpg";
 import markets from "../../assets/img/markets.jpg";
 import venues from "../../assets/img/venues.jpg";
 import referees from "../../assets/img/referee.jpg";
+import {Link} from "react-router-dom";
 
 interface LinkBoxProps {
     text: string
     imageSRC: string
+    pathTo: string
 }
 
-const LinkBox: React.FC <LinkBoxProps> = ({text, imageSRC}) => {
+const LinkBox: React.FC <LinkBoxProps> = ({text, imageSRC, pathTo}) => {
     return (
-        <div className={styles.linkBox}>
-            <div>
-                <p>{text}</p>
+        <Link to={pathTo}>
+            <div className={styles.linkBox}>
+                <div>
+                    <p>{text}</p>
+                </div>
+                <img src={imageSRC}/>
             </div>
-            <img src={imageSRC}/>
-        </div>
+        </Link>
     )
 }
 
@@ -42,13 +46,13 @@ const AppContent = () => {
             </div>
             <div className={styles.content}>
                 <div className={styles.contentWrapper}>
-                    <LinkBox text={'Leagues'} imageSRC={leaguesPhoto}/>
-                    <LinkBox text={'Teams'} imageSRC={teamPhoto}/>
-                    <LinkBox text={'Players'} imageSRC={playersPhoto}/>
-                    <LinkBox text={'Bookmakers'} imageSRC={bookmakers}/>
-                    <LinkBox text={'Markets'} imageSRC={markets}/>
-                    <LinkBox text={'Venues'} imageSRC={venues}/>
-                    <LinkBox text={'Referees'} imageSRC={referees}/>
+                    <LinkBox text={'Leagues'} imageSRC={leaguesPhoto} pathTo={'/leagues'}/>
+                    <LinkBox text={'Teams'} imageSRC={teamPhoto} pathTo={'/teams'}/>
+                    <LinkBox text={'Players'} imageSRC={playersPhoto} pathTo={'/players'}/>
+                    <LinkBox text={'Bookmakers'} imageSRC={bookmakers} pathTo={'/bookmakers'}/>
+                    <LinkBox text={'Markets'} imageSRC={markets} pathTo={'/markets'}/>
+                    <LinkBox text={'Venues'} imageSRC={venues} pathTo={'/venues'}/>
+                    <LinkBox text={'Referees'} imageSRC={referees} pathTo={'/referees'}/>
                 </div>
             </div>
         </div>
