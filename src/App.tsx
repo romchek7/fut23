@@ -7,6 +7,7 @@ import Leagues from "./components/Leagues/Leagues";
 import Seasons from "./components/Seasons/Seasons";
 import Footer from "./components/Footer/Footer";
 import AppContent from "./components/AppContent/AppContent";
+import Season from "./components/Seasons/Season/Season";
 
 function App() {
     return (
@@ -19,6 +20,9 @@ function App() {
                     <Route path={'/leagues'} element={<Leagues/>}/>
                     <Route path='/seasons' element={<Seasons/>}>
                         <Route path=':league_id' element={<Seasons/>}/>
+                    </Route>
+                    <Route path='/season' element={<Season/>}>
+                        <Route path=':season_id' element={<Season/>}/>
                     </Route>
                 </Routes>
             </div>

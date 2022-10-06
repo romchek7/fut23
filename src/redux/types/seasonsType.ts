@@ -35,3 +35,31 @@ interface FetchSeasonsError {
 }
 
 export type SeasonsActionTypes = FetchSeasons | FetchSeasonsSuccess | FetchSeasonsError
+
+export interface ISeasonByIdState {
+    season: ISeason | null
+    loadingSeason: boolean
+    errorSeason: null | string
+}
+
+export enum getSeasonByIdActionType {
+    FETCH_SEASON_BY_ID='FETCH_SEASON_BY_ID',
+    FETCH_SEASON_BY_ID_SUCCESS='FETCH_SEASON_BY_ID_SUCCESS',
+    FETCH_SEASON_BY_ID_ERROR='FETCH_SEASON_BY_ID_ERROR'
+}
+
+interface FetchSeasonById {
+    type: getSeasonByIdActionType.FETCH_SEASON_BY_ID
+}
+
+interface FetchSeasonByIdSuccess {
+    type: getSeasonByIdActionType.FETCH_SEASON_BY_ID_SUCCESS
+    payload: any
+}
+
+interface FetchSeasonByIdError {
+    type: getSeasonByIdActionType.FETCH_SEASON_BY_ID_ERROR
+    payload: string
+}
+
+export type SeasonByIdActionTypes = FetchSeasonById | FetchSeasonByIdSuccess | FetchSeasonByIdError

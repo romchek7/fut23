@@ -1,6 +1,11 @@
 import {Dispatch} from "redux";
-import {getSeasonsActionType, SeasonsActionTypes} from "../types/seasonsType";
-import {getSeasons} from "../../api/api";
+import {
+    getSeasonByIdActionType,
+    getSeasonsActionType,
+    SeasonByIdActionTypes,
+    SeasonsActionTypes
+} from "../types/seasonsType";
+import {getSeasonByIdAPI, getSeasons} from "../../api/api";
 
 export const fetchSeasons = (league_id: number) => {
     return async (dispatch: Dispatch<SeasonsActionTypes>) => {
@@ -21,6 +26,31 @@ export const fetchSeasons = (league_id: number) => {
         catch (e) {
             dispatch({
                 type: getSeasonsActionType.FETCH_SEASONS_ERROR,
+                payload: `${e}`
+            })
+        }
+    }
+}
+
+export const getSeasonByIdThunk = (season_id: number) => {
+    return async (dispatch: Dispatch<SeasonByIdActionTypes>) => {
+        try {
+            dispatch({
+                type: getSeasonByIdActionType.FETCH_SEASON_BY_ID
+            })
+
+            const response = await getSeasonByIdAPI(season_id)
+
+            if (response) {
+                dispatch({
+                    type: getSeasonByIdActionType.FETCH_SEASON_BY_ID_SUCCESS,
+                    payload: response.data.data
+                })
+            }
+        }
+        catch (e) {
+            dispatch({
+                type: getSeasonByIdActionType.FETCH_SEASON_BY_ID_ERROR,
                 payload: `${e}`
             })
         }

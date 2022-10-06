@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import useDispatchSeasons from "../../hooks/useDispatchSeasons";
 import {useSelector} from "react-redux";
 import {getSeasons} from "../../redux/selectors/seasonsSelector";
@@ -64,7 +64,7 @@ const Seasons: React.FC = () => {
                         <td>{season.start_date}</td>
                         <td>{season.end_date}</td>
                         <td className={styles.showInfo}>
-                            <button className='SearchBtn'>Show seasons</button>
+                            <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show season information</Link>
                         </td>
                     </tr>
                 )}

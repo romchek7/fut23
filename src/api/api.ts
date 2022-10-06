@@ -35,3 +35,7 @@ export const getLeague = (league_id: number) => {
 export const getSeasons = (league_id: number) => {
     return instance.get(`seasons?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&league_id=${league_id}`)
 }
+
+export const getSeasonByIdAPI = (season_id: number) => {
+    return instance.get(`seasons/${season_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
+}

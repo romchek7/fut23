@@ -37,3 +37,10 @@ button[disabled]:hover{
   color: #666666;
   cursor: default;
 }
+
+.horizontalLine {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(14, 82, 53, 0), rgba(14, 82, 53, 0.75), rgba(14, 82, 53, 0));
+  width: 100%;
+}

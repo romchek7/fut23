@@ -1,0 +1,41 @@
+.main {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.seasonBlock {
+    width: 80%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seasonInfo {
+    width: 20%;
+    min-height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-right: 1px solid rgb(14, 82, 53);
+}
+
+.seasonInfo div {
+    width: 60%;
+}
+
+.seasonsParams {
+    width: 80%;
+    min-height: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.seasonsParams div {
+    margin-left: 20px;
+}
