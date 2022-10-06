@@ -1,0 +1,132 @@
+.main {
+    width: 100%;
+    min-height: 800px;
+}
+
+.photoHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoBlock {
+    width: 80%;
+    height: 500px;
+    background-image: url("../../assets/img/photoBlock.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.photoBlockInfo {
+    width: 80%;
+    height: 500px;
+    background-color: rgba(14, 82, 53, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.photoBlockText {
+    width: 80%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.photoBlockText h1, .photoBlockText p {
+    color: rgb(255, 255, 255);
+}
+
+.photoBlockText p a {
+    color: rgb(255, 255, 255);
+}
+
+.photoBlockText p a:hover {
+    color: rgb(49, 201, 141);
+}
+
+.swimTextBlock {
+    width: 80%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentWrapper {
+    width: 80%;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 50px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.linkBox {
+    background-color: #666666;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkBox div {
+    position: absolute;
+    z-index: 1;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.linkBox div p {
+    position: absolute;
+    width: 90%;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.linkBox img {
+    width: auto;
+    height: 100%;
+    transition: 1s all ease-in-out;
+}
+
+.linkBox:hover img {
+    transform: scale(1.5);
+}

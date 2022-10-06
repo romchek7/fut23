@@ -10,6 +10,7 @@
 .seasons {
     margin-top: 50px;
     width: 70%;
+    min-height: 500px;
 }
 
 table {

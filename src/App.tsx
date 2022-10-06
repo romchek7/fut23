@@ -5,6 +5,8 @@ import Navigation from "./components/Navigation/Navigation";
 import './App.css';
 import Leagues from "./components/Leagues/Leagues";
 import Seasons from "./components/Seasons/Seasons";
+import Footer from "./components/Footer/Footer";
+import AppContent from "./components/AppContent/AppContent";
 
 function App() {
     return (
@@ -12,6 +14,7 @@ function App() {
             <Navigation/>
             <div className="AppContent">
                 <Routes>
+                    <Route path={'/'} element={<AppContent/>}/>
                     <Route path={'/players'} element={<Players/>}/>
                     <Route path={'/leagues'} element={<Leagues/>}/>
                     <Route path='/seasons' element={<Seasons/>}>
@@ -19,6 +22,7 @@ function App() {
                     </Route>
                 </Routes>
             </div>
+            <Footer/>
         </div>
     );
 }
