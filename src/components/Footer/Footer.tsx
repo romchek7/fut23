@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className={styles.main}>
             <div className={styles.githubContent}>
-                <a href='#'>
+                <a href='https://github.com/romchek7/fut23' target='_blank'>
                     <GithubOutlined/>
                 </a>
             </div>

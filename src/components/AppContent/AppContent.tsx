@@ -32,7 +32,7 @@ const AppContent = () => {
                     <div className={styles.photoBlockInfo}>
                         <div className={styles.photoBlockText}>
                             <h1>Pet Project: "FUT 23"</h1>
-                            <p>API: <a href='https://sportdataapi.com'>sportdataapi.com</a></p>
+                            <p>API: <a href='https://sportdataapi.com' target='_blank'>sportdataapi.com</a></p>
                         </div>
                         <div className={styles.swimTextBlock}>
                             swimTextBlock
