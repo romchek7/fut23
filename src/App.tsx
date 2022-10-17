@@ -8,6 +8,7 @@ import Seasons from "./components/Seasons/Seasons";
 import Footer from "./components/Footer/Footer";
 import AppContent from "./components/AppContent/AppContent";
 import Season from "./components/Seasons/Season/Season";
+import Teams from "./components/Teams/Teams";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path='/season' element={<Season/>}>
                         <Route path=':season_id' element={<Season/>}/>
                     </Route>
+                    <Route path={'/teams'} element={<Teams/>}/>
                 </Routes>
             </div>
             <Footer/>

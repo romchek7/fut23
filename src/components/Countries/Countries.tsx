@@ -52,8 +52,6 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
         return <div>Some error: {errorCountries}</div>
     }
 
-    console.log(continentIsReadyToFetch)
-
     return (
         <div className={styles.filtersMain}>
             <div className={styles.filters}>

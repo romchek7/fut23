@@ -39,6 +39,12 @@ const Players: React.FC = () => {
         }
     }, [players, pageSize])
 
+    useEffect(() => {
+        setCurrentPage(1)
+        setMinIndex(0)
+        setMaxIndex(0)
+    }, [players])
+
     if (loading) {
         return <div>Loading...</div>
     }
