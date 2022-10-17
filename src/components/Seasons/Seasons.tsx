@@ -56,7 +56,7 @@ const Seasons: React.FC = () => {
                         <th className={styles.showInfo}>Information</th>
                     </tr>
                 {seasons.map(season =>
-                    <tr>
+                    <tr key={season.season_id}>
                         <td>{season.name}</td>
                         <td>{league?.name}</td>
                         <td>{country?.name}</td>

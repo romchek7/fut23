@@ -6,6 +6,7 @@ import seasonsReducer from "./seasonsReducer";
 import leagueReducer from "./leagueReducer";
 import countryReducer from "./countryReducer";
 import seasonReducer from "./seasonReducer"
+import stagesReducer from "./stagesReducer";
 
 const rootReducer = combineReducers({
     playersReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     seasonsReducer,
     leagueReducer,
     countryReducer,
-    seasonReducer
+    seasonReducer,
+    stagesReducer
 })
 
 export type AppStateType = ReturnType<typeof rootReducer>

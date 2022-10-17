@@ -15,7 +15,7 @@ const League: React.FC <LeagueProps> = ({leagues}) => {
     return (
         <div className={styles.leaguesWrapper}>
             {leagues.map(league =>
-                <div className={styles.leagueBox}>
+                <div className={styles.leagueBox} key={league.league_id}>
                     {league.name}
                     <NavLink className={styles.ShowSeasonsNavlink} to={`/seasons/${league.league_id}`}>
                         <button className='SearchBtn'>Show seasons</button>

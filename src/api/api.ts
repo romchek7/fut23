@@ -39,3 +39,7 @@ export const getSeasons = (league_id: number) => {
 export const getSeasonByIdAPI = (season_id: number) => {
     return instance.get(`seasons/${season_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
 }
+
+export const getStagesAPI = (season_id: number) => {
+    return instance.get(`https://app.sportdataapi.com/api/v1/soccer/stages?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
+}

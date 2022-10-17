@@ -6,6 +6,7 @@ import {useSelector} from "react-redux";
 import {getSeasonByIdSelector} from "../../../redux/selectors/seasonsSelector";
 import useDispatchLeague from "../../../hooks/useDispatchLeague";
 import {getLeague} from "../../../redux/selectors/leaguesSelector";
+import Stages from "../../Stages/Stages";
 
 const Season: React.FC = () => {
     const params = useParams()
@@ -50,9 +51,12 @@ const Season: React.FC = () => {
                     </div>
                 </div>
                 <div className={styles.seasonsParams}>
-                    <div>
-                        <h1>Stages: </h1>
-                    </div>
+                    {season?.season_id
+                        ? <div>
+                            <h1>Stages: </h1>
+                            <Stages season_id={season?.season_id}/>
+                        </div>
+                        : <span></span>}
                     <hr className='horizontalLine'></hr>
                     <div>
                         <h1>Matches: </h1>
