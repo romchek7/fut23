@@ -1,0 +1,79 @@
+.main {
+    width: 100%;
+}
+
+.matchesBox {
+    width: 100%;
+    font-size: 12px;
+}
+
+.matchInfo {
+    width: 100%;
+    display: flex;
+}
+
+.status {
+    min-width: 120px;
+}
+
+.status p, .matchTeams p  {
+    font-weight: bold;
+}
+
+.matchDate {
+    min-width: 200px;
+}
+
+.status, .matchDate, .matchTeams {
+    display: flex;
+}
+
+.status p, .matchDate p, .matchTeams p {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.filters {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    grid-gap: 50px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.filterBox {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.filterBox span {
+    display: flex;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.filterBox span p {
+    width: 40%;
+}
+
+.filterBox span input {
+    width: 60%;
+}
+
+.live {
+    display: flex;
+}
+
+.NoResults {
+    width: 100%;
+    height: 200px;
+    font-size: 50px;
+}

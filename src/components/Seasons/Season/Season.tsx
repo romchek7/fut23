@@ -7,6 +7,7 @@ import {getSeasonByIdSelector} from "../../../redux/selectors/seasonsSelector";
 import useDispatchLeague from "../../../hooks/useDispatchLeague";
 import {getLeague} from "../../../redux/selectors/leaguesSelector";
 import Stages from "../../Stages/Stages";
+import Matches from "../../Matches/Matches";
 
 const Season: React.FC = () => {
     const params = useParams()
@@ -42,10 +43,10 @@ const Season: React.FC = () => {
         <div className={styles.main}>
             <div className={styles.seasonBlock}>
                 <div className={styles.seasonInfo}>
-                    <h1>{season?.name}</h1>
-                    <h1>{league?.name}</h1>
-                    <p>{season?.is_current === 1 ? "Current" : "Finished"}</p>
-                    <div>
+                    <div className={styles.fixedSeasonInfo}>
+                        <h1>{season?.name}</h1>
+                        <h1>{league?.name}</h1>
+                        <p>{season?.is_current === 1 ? "Current" : "Finished"}</p>
                         <p>Start date: {season?.start_date}</p>
                         <p>End date: {season?.end_date}</p>
                     </div>
@@ -59,7 +60,13 @@ const Season: React.FC = () => {
                         : <span></span>}
                     <hr className='horizontalLine'></hr>
                     <div>
-                        <h1>Matches: </h1>
+                        {season?.season_id
+                            ? <div>
+                                <h1>Matches: </h1>
+                                <Matches season_id={season?.season_id} live={season?.is_current === 1}
+                                         date_from={season.start_date} date_to={season.end_date}/>
+                            </div>
+                            : <span></span>}
                     </div>
                 </div>
             </div>

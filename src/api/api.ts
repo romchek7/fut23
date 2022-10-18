@@ -41,9 +41,22 @@ export const getSeasonByIdAPI = (season_id: number) => {
 }
 
 export const getStagesAPI = (season_id: number) => {
-    return instance.get(`https://app.sportdataapi.com/api/v1/soccer/stages?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
+    return instance.get(`stages?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
 
 export const getTeamsAPI = (country_id: number) => {
     return instance.get(`teams?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&country_id=${country_id}`)
+}
+
+export const getMatchesAPI = (season_id: number, live: boolean, status_code: number, date_from: string, date_to: string) => {
+    if (season_id != 0 && live) {
+        return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}&live=${live}`)
+    }
+
+    if (season_id != 0 && !live && date_from != '' && date_to!='') {
+        debugger
+        return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}&date_from=${date_from}&date_to=${date_to}`)
+    }
+
+    return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
