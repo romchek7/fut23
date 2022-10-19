@@ -1,70 +1,41 @@
 .main {
     width: 100%;
+    padding: 10px;
 }
 
 .matchesBox {
     width: 100%;
-    font-size: 12px;
 }
 
-.matchInfo {
-    width: 100%;
+.teamTd {
     display: flex;
-}
-
-.status {
-    min-width: 120px;
-}
-
-.status p, .matchTeams p  {
-    font-weight: bold;
-}
-
-.matchDate {
-    min-width: 200px;
-}
-
-.status, .matchDate, .matchTeams {
-    display: flex;
-}
-
-.status p, .matchDate p, .matchTeams p {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.filters {
-    width: 100%;
-    height: 200px;
-    display: grid;
-    grid-template-columns: repeat(2, 50px);
-    grid-gap: 50px;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.fullTime {
+    text-align: center;
 }
 
 .filterBox {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.filterBox span {
-    display: flex;
-    height: 20px;
     width: 100%;
-    margin-bottom: 10px;
+    height: 100px;
+    display: flex;
 }
 
-.filterBox span p {
-    width: 40%;
+.filterBox1, .filterBox3 {
+    width: 20%;
 }
 
-.filterBox span input {
+.filterBox2, .filterBox1, .filterBox3 {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.filterBox2 {
     width: 60%;
 }
 

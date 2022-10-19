@@ -11,7 +11,7 @@ interface MatchesProps {
     date_to: string
 }
 
-const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to}) => {
+const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) => {
     const {matches, loadingMatches, errorMatches} = useSelector(getMatchesSelector)
 
     const {fetchMatches} = useDispatchMatches()
@@ -35,8 +35,7 @@ const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to})
     const handleChangeLive = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.currentTarget.checked) {
             setLiveIsChecked(true)
-        }
-        else {
+        } else {
             setLiveIsChecked(false)
         }
     }
@@ -52,6 +51,7 @@ const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to})
     const onReset = () => {
         setDate_from('')
         setDate_to('')
+        setLiveIsChecked(false)
     }
 
     if (loadingMatches) {
@@ -66,52 +66,67 @@ const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to})
         <div className={styles.main}>
             <div className={styles.filters}>
                 <div className={styles.filterBox}>
-                    <span>
-                        <input type='checkbox' id='liveMatch' name='liveMatch' disabled={!live}
-                               checked={liveIsChecked} onChange={handleChangeLive}/> Live
-                    </span>
-                </div>
-                <div className={styles.filterBox}>
-                    <span>
-                        <p>
-                            Date from:
-                        </p>
-                        <input type="date" name="date_from"
-                               value={dateFrom}
-                               onChange={handleChangeDateFrom}
-                               required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                    </span>
-                    <span>
-                        <p>
-                            Date to:
-                        </p>
-                        <input type="date" name="date_to"
-                               value={dateTo}
-                               onChange={handleChangeDateTo}
-                               required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-                    </span>
-                    <button className='SearchBtn' onClick={() => onReset}>Reset</button>
+                    <div className={styles.filterBox1}>
+                        <span>
+                            <input type='checkbox' id='liveMatch' name='liveMatch' disabled={!live}
+                                   checked={liveIsChecked} onChange={handleChangeLive}/> Live
+                        </span>
+                    </div>
+                    <div className={styles.filterBox2}>
+                        <div>
+                            <p>
+                                Date from:
+                            </p>
+                            <input type="date" name="date_from"
+                                   value={dateFrom}
+                                   onChange={handleChangeDateFrom}
+                                   required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                        </div>
+                        <div>
+                            <p>
+                                Date to:
+                            </p>
+                            <input type="date" name="date_to"
+                                   value={dateTo}
+                                   onChange={handleChangeDateTo}
+                                   required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                        </div>
+                    </div>
+                    <div className={styles.filterBox3}>
+                        <button className='SearchBtn' onClick={() => onReset()}>Reset</button>
+                    </div>
                 </div>
             </div>
             <div className={styles.matchesBox}>
                 {matches.length > 0
-                    ? matches.map(match =>
-                        <div key={match.match_id} className={styles.matchInfo}>
-                            <div className={styles.status}>
-                                <p>Status:</p>
-                                <span>{match.status ? match.status : '?'}</span>
-                            </div>
-                            <div className={styles.matchDate}>
-                                <p>Match start:</p>
-                                <span>{match.match_start}</span>
-                            </div>
-                            <div className={styles.matchTeams}>
-                                <span>{match.home_team.name}</span>
-                                <p>{match.stats.ft_score ? match.stats.ft_score : '?-?'}</p>
-                                <span>{match.away_team.name}</span>
-                            </div>
-                        </div>
-                    )
+                    ? <table>
+                        <tr>
+                            <th>Status</th>
+                            <th>Match start</th>
+                            <th>Home team</th>
+                            <th>Full time</th>
+                            <th>Away team</th>
+                            <th>Venue</th>
+                        </tr>
+                        {matches.map(match =>
+                            <tr key={match.match_id}>
+                                <td>{match.status ? match.status : '-----'}</td>
+                                <td>{match.match_start}</td>
+                                <td className={styles.teamTd}>
+                                    <img src={match.home_team.logo}/>
+                                    {match.home_team.name}
+                                </td>
+                                <td className={styles.fullTime}>{match.stats.ft_score ? match.stats.ft_score : '-----'}</td>
+                                <td className={styles.teamTd}>
+                                    <img src={match.away_team.logo}/>
+                                    {match.away_team.name}
+                                </td>
+                                <td>
+                                    {match.venue ? match.venue.name : '-----'}
+                                </td>
+                            </tr>
+                        )}
+                    </table>
                     : <div className={styles.NoResults}>No results</div>
                 }
             </div>

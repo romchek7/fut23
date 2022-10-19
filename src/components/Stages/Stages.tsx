@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {getStagesSelector} from "../../redux/selectors/stagesSelector";
 import useDispatchStages from "../../hooks/useDispatchStages";
+import styles from "./Stages.module.css";
 
 interface StagesProps {
     season_id: number
@@ -25,7 +26,7 @@ const Stages: React.FC<StagesProps> = ({season_id}) => {
     }
 
     return (
-        <div>
+        <div className={styles.main}>
             {stages.length > 0
                 ? stages.map(stage =>
                     <p key={stage.id}>{stage.name}</p>

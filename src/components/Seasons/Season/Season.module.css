@@ -48,5 +48,9 @@
 }
 
 .seasonsParams div {
+    width: 100%;
+}
+
+.seasonsParams div h1 {
     margin-left: 20px;
 }

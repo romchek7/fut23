@@ -59,15 +59,13 @@ const Season: React.FC = () => {
                         </div>
                         : <span></span>}
                     <hr className='horizontalLine'></hr>
-                    <div>
-                        {season?.season_id
-                            ? <div>
-                                <h1>Matches: </h1>
-                                <Matches season_id={season?.season_id} live={season?.is_current === 1}
-                                         date_from={season.start_date} date_to={season.end_date}/>
-                            </div>
-                            : <span></span>}
-                    </div>
+                    {season?.season_id
+                        ? <div>
+                            <h1>Matches: </h1>
+                            <Matches season_id={season?.season_id} live={season?.is_current === 1}
+                                     date_from={season.start_date} date_to={season.end_date}/>
+                        </div>
+                        : <span></span>}
                 </div>
             </div>
         </div>
