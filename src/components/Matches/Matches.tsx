@@ -49,6 +49,11 @@ const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to})
         setDate_to(e.currentTarget.value)
     }
 
+    const onReset = () => {
+        setDate_from('')
+        setDate_to('')
+    }
+
     if (loadingMatches) {
         return <div>Loading...</div>
     }
@@ -85,7 +90,7 @@ const Matches: React.FC <MatchesProps> = ({season_id, live, date_from, date_to})
                                onChange={handleChangeDateTo}
                                required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
                     </span>
-                    <button className='SearchBtn'>Reset</button>
+                    <button className='SearchBtn' onClick={() => onReset}>Reset</button>
                 </div>
             </div>
             <div className={styles.matchesBox}>

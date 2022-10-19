@@ -58,5 +58,9 @@ export const getMatchesAPI = (season_id: number, live: boolean, status_code: num
         return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}&date_from=${date_from}&date_to=${date_to}`)
     }
 
+    if (season_id === 0 && live) {
+        return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&live=true`)
+    }
+
     return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
