@@ -8,6 +8,7 @@ import useDispatchLeague from "../../../hooks/useDispatchLeague";
 import {getLeague} from "../../../redux/selectors/leaguesSelector";
 import Stages from "../../Stages/Stages";
 import Matches from "../../Matches/Matches";
+import Standings from "../../Standings/Standings";
 
 const Season: React.FC = () => {
     const params = useParams()
@@ -56,6 +57,13 @@ const Season: React.FC = () => {
                         ? <div>
                             <h1>Stages: </h1>
                             <Stages season_id={season?.season_id}/>
+                        </div>
+                        : <span></span>}
+                    <hr className='horizontalLine'></hr>
+                    {season?.season_id
+                        ? <div>
+                            <h1>Standings: </h1>
+                            <Standings season_id={season.season_id} country_id={season.country_id}/>
                         </div>
                         : <span></span>}
                     <hr className='horizontalLine'></hr>

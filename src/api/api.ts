@@ -48,13 +48,16 @@ export const getTeamsAPI = (country_id: number) => {
     return instance.get(`teams?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&country_id=${country_id}`)
 }
 
+export const getTeamByIdAPI = (team_id: number) => {
+    return instance.get(`teams/${team_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
+}
+
 export const getMatchesAPI = (season_id: number, live: boolean, status_code: number, date_from: string, date_to: string) => {
     if (season_id != 0 && live) {
         return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}&live=${live}`)
     }
 
     if (season_id != 0 && !live && date_from != '' && date_to!='') {
-        debugger
         return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}&date_from=${date_from}&date_to=${date_to}`)
     }
 
@@ -63,4 +66,8 @@ export const getMatchesAPI = (season_id: number, live: boolean, status_code: num
     }
 
     return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
+}
+
+export const getStandings = (season_id: number) => {
+    return instance.get(`standings?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }

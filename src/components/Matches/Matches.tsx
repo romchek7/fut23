@@ -21,8 +21,8 @@ const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) 
     const [dateTo, setDate_to] = useState(date_to)
 
     useEffect(() => {
-        fetchMatches(season_id, false, 0, '', '')
-    }, [season_id])
+        fetchMatches(season_id, false, 0, date_from, date_to)
+    }, [])
 
     useEffect(() => {
         fetchMatches(season_id, liveIsChecked, 0, '', '')
@@ -49,8 +49,8 @@ const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) 
     }
 
     const onReset = () => {
-        setDate_from('')
-        setDate_to('')
+        setDate_from(date_from)
+        setDate_to(date_to)
         setLiveIsChecked(false)
     }
 

@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {getTeamsActionTypes, TeamActionTypes} from "../types/teamsType";
+import {getTeamActionTypes, getTeamsActionTypes, TeamActionTypes, TeamBuIdActionTypes} from "../types/teamsType";
 import {getTeamsAPI} from "../../api/api";
 
 export const fetchTeams = (country_id: number) => {
@@ -21,6 +21,31 @@ export const fetchTeams = (country_id: number) => {
         catch (e) {
             dispatch({
                 type: getTeamsActionTypes.FETCH_TEAMS_ERROR,
+                payload: `${e}`
+            })
+        }
+    }
+}
+
+export const getTeamBuId = (team_id: number) => {
+    return async (dispatch: Dispatch<TeamBuIdActionTypes>) => {
+        try {
+            dispatch({
+                type: getTeamActionTypes.FETCH_TEAM
+            })
+
+            const response = await getTeamsAPI(team_id)
+
+            if (response.data) {
+                dispatch({
+                    type: getTeamActionTypes.FETCH_TEAM_SUCCESS,
+                    payload: response.data.data
+                })
+            }
+        }
+        catch (e) {
+            dispatch({
+                type: getTeamActionTypes.FETCH_TEAM_ERROR,
                 payload: `${e}`
             })
         }

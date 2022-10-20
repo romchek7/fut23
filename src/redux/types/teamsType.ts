@@ -35,3 +35,31 @@ interface FetchTeamsError {
 }
 
 export type TeamActionTypes = FetchTeams | FetchTeamsSuccess | FetchTeamsError
+
+export enum getTeamActionTypes {
+    FETCH_TEAM='FETCH_TEAM',
+    FETCH_TEAM_SUCCESS='FETCH_TEAM_SUCCESS',
+    FETCH_TEAM_ERROR='FETCH_TEAM_ERROR'
+}
+
+interface FetchTeam {
+    type: getTeamActionTypes.FETCH_TEAM
+}
+
+interface FetchTeamSuccess {
+    type: getTeamActionTypes.FETCH_TEAM_SUCCESS,
+    payload: any
+}
+
+interface FetchTeamError {
+    type: getTeamActionTypes.FETCH_TEAM_ERROR,
+    payload: string
+}
+
+export type TeamBuIdActionTypes = FetchTeam | FetchTeamSuccess | FetchTeamError
+
+export interface ITeamState {
+    team: ITeam
+    loadingTeam: boolean
+    errorTeam: null | string
+}
