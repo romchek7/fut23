@@ -100,6 +100,7 @@ const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) 
             <div className={styles.matchesBox}>
                 {matches.length > 0
                     ? <table>
+                        <tbody>
                         <tr>
                             <th>Status</th>
                             <th>Match start</th>
@@ -126,6 +127,7 @@ const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) 
                                 </td>
                             </tr>
                         )}
+                        </tbody>
                     </table>
                     : <div className={styles.NoResults}>No results</div>
                 }

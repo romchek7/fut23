@@ -15,7 +15,7 @@ const Players: React.FC = () => {
 
     const [currentPage, setCurrentPage] = useState(1)
     const [minIndex, setMinIndex] = useState(0)
-    const [maxIndex, setMaxIndex] = useState(0)
+    const [maxIndex, setMaxIndex] = useState(12)
     const [pageSize, setPageSize] = useState(12)
     const [county_id, setCountryID] = useState(0)
     const [continentIsReadyToFetch, setContinent] = useState('')
@@ -42,7 +42,7 @@ const Players: React.FC = () => {
     useEffect(() => {
         setCurrentPage(1)
         setMinIndex(0)
-        setMaxIndex(0)
+        setMaxIndex(12)
     }, [players])
 
     if (loading) {

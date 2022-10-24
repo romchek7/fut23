@@ -54,28 +54,27 @@ const Season: React.FC = () => {
                 </div>
                 <div className={styles.seasonsParams}>
                     {season?.season_id
-                        ? <div>
+                        ? <div className={styles.infoBlock1}>
                             <h1>Stages: </h1>
                             <Stages season_id={season?.season_id}/>
                             <div className={styles.topScorers}>
-                                <h1>Top scorers: </h1>
-                                <p>
-                                    <Link to={`/topScorers/${season.season_id}`}>Show top scorers of season {season.name}</Link>
-                                </p>
+                                <h1>
+                                    <Link to={`/topScorers/${season.season_id}`}>
+                                        Top scorers of season {season.name}
+                                    </Link>
+                                </h1>
                             </div>
                         </div>
                         : <span></span>}
-                    <hr className='horizontalLine'></hr>
                     {season?.season_id
                         ? <div>
-                            <h1>Standings: </h1>
+                            <h1 className={styles.infoBlock1}>Standings: </h1>
                             <Standings season_id={season.season_id} country_id={season.country_id}/>
                         </div>
                         : <span></span>}
-                    <hr className='horizontalLine'></hr>
                     {season?.season_id
                         ? <div>
-                            <h1>Matches: </h1>
+                            <h1 className={styles.infoBlock1}>Matches: </h1>
                             <Matches season_id={season?.season_id} live={season?.is_current === 1}
                                      date_from={season.start_date} date_to={season.end_date}/>
                         </div>

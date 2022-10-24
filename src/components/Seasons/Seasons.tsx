@@ -46,6 +46,7 @@ const Seasons: React.FC = () => {
             <h1>{league?.name}</h1>
             <div className={styles.seasons}>
                 <table>
+                    <tbody>
                     <tr>
                         <th>Season</th>
                         <th>League</th>
@@ -55,19 +56,21 @@ const Seasons: React.FC = () => {
                         <th>End date</th>
                         <th className={styles.showInfo}>Information</th>
                     </tr>
-                {seasons.map(season =>
-                    <tr key={season.season_id}>
-                        <td>{season.name}</td>
-                        <td>{league?.name}</td>
-                        <td>{country?.name}</td>
-                        <td>{season.is_current === 1 ? "Current" : "Finished"}</td>
-                        <td>{season.start_date}</td>
-                        <td>{season.end_date}</td>
-                        <td className={styles.showInfo}>
-                            <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show season information</Link>
-                        </td>
-                    </tr>
-                )}
+                    {seasons.map(season =>
+                        <tr key={season.season_id}>
+                            <td>{season.name}</td>
+                            <td>{league?.name}</td>
+                            <td>{country?.name}</td>
+                            <td>{season.is_current === 1 ? "Current" : "Finished"}</td>
+                            <td>{season.start_date}</td>
+                            <td>{season.end_date}</td>
+                            <td className={styles.showInfo}>
+                                <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show season
+                                    information</Link>
+                            </td>
+                        </tr>
+                    )}
+                    </tbody>
                 </table>
             </div>
         </div>

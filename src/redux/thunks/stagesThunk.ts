@@ -11,8 +11,6 @@ export const fetchStages = (season_id: number) => {
 
             const response = await getStagesAPI(season_id)
 
-            console.log(response)
-
             if (response.data) {
                 dispatch({
                     type: getStagesActionTypes.FETCH_STAGES_SUCCESS,

@@ -14,7 +14,7 @@ const Referees: React.FC = () => {
 
     const [currentPage, setCurrentPage] = useState(1)
     const [minIndex, setMinIndex] = useState(0)
-    const [maxIndex, setMaxIndex] = useState(0)
+    const [maxIndex, setMaxIndex] = useState(12)
     const [pageSize, setPageSize] = useState(12)
     const [county_id, setCountryID] = useState(0)
     const [continentIsReadyToFetch, setContinent] = useState('')
@@ -34,7 +34,7 @@ const Referees: React.FC = () => {
     useEffect(() => {
         setCurrentPage(1)
         setMinIndex(0)
-        setMaxIndex(0)
+        setMaxIndex(12)
     }, [referees])
 
     if (loading) {
@@ -57,7 +57,7 @@ const Referees: React.FC = () => {
                         {referees.map((referee, idx) => idx >= minIndex
                             && idx < maxIndex
                             &&
-                            <div className={styles.box}>
+                            <div className={styles.box} key={idx}>
                                 <div>
                                     <img src={referee.img ? referee.img : icon}/>
                                 </div>

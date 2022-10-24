@@ -27,7 +27,7 @@ export const fetchTeams = (country_id: number) => {
     }
 }
 
-export const getTeamBuId = (team_id: number) => {
+export const getTeamById = (team_id: number) => {
     return async (dispatch: Dispatch<TeamBuIdActionTypes>) => {
         try {
             dispatch({

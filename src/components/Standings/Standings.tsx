@@ -35,6 +35,7 @@ const Standings: React.FC<StandingsProps> = ({season_id, country_id}) => {
         <div className={styles.main}>
             {standingInfo.standings.length > 0
                 ? <table>
+                    <tbody>
                     <tr>
                         <th>№</th>
                         <th>Team</th>
@@ -50,23 +51,24 @@ const Standings: React.FC<StandingsProps> = ({season_id, country_id}) => {
                         <th>Goals against</th>
                     </tr>
                     {standingInfo.standings.map((standing, idx) =>
-                    <tr>
-                        <td>{idx+1}</td>
-                        <td>{
-                            teams.map(team => team.team_id === standing.team_id ? <img src={team.logo}/> : <></>)
-                        }</td>
-                        <td>{standing.points}</td>
-                        <td>{standing.status}</td>
-                        <td>{standing.result}</td>
-                        <td>{standing.overall.games_played}</td>
-                        <td>{standing.overall.won}</td>
-                        <td>{standing.overall.draw}</td>
-                        <td>{standing.overall.lost}</td>
-                        <td>{standing.overall.goals_diff}</td>
-                        <td>{standing.overall.goals_scored}</td>
-                        <td>{standing.overall.goals_against}</td>
-                    </tr>
+                        <tr key={idx}>
+                            <td>{idx + 1}</td>
+                            <td>{
+                                teams.map(team => team.team_id === standing.team_id ? <img key={team.team_id} src={team.logo}/> : <span key={team.team_id}></span>)
+                            }</td>
+                            <td>{standing.points}</td>
+                            <td>{standing.status}</td>
+                            <td>{standing.result}</td>
+                            <td>{standing.overall.games_played}</td>
+                            <td>{standing.overall.won}</td>
+                            <td>{standing.overall.draw}</td>
+                            <td>{standing.overall.lost}</td>
+                            <td>{standing.overall.goals_diff}</td>
+                            <td>{standing.overall.goals_scored}</td>
+                            <td>{standing.overall.goals_against}</td>
+                        </tr>
                     )}
+                    </tbody>
                 </table>
                 : <div>No results</div>}
         </div>

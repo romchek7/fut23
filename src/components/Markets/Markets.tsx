@@ -26,8 +26,8 @@ const Markets: React.FC = () => {
             {markets.length > 0 &&
                 <div className={styles.content}>
                     <div className={styles.marketsWrapper}>
-                        {markets.map(market =>
-                            <div className={styles.marketBox}>
+                        {markets.map((market, idx) =>
+                            <div className={styles.marketBox} key={idx}>
                                 <div className={styles.name}>
                                     {market.name}
                                 </div>

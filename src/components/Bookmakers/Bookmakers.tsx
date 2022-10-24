@@ -26,8 +26,8 @@ const Bookmakers: React.FC = () => {
             {bookmakers.length > 0 &&
                 <div className={styles.content}>
                     <div className={styles.bookmakersWrapper}>
-                        {bookmakers.map(bookmaker =>
-                            <div className={styles.bookmakerBox}>
+                        {bookmakers.map((bookmaker, idx) =>
+                            <div className={styles.bookmakerBox} key={idx}>
                                 <div className={styles.photo}>
                                     <img src={bookmaker.img}/>
                                 </div>

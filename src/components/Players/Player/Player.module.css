@@ -27,7 +27,7 @@
 
 .cardWrapper img {
     position: absolute;
-    top: -65px;
+    top: -50px;
     right: 62px;
     height: 50px;
     width: 50px;
@@ -36,7 +36,7 @@
 .cardWrapper span {
     position: absolute;
     left: 63px;
-    top: -45px;
+    top: -30px;
 }
 
 .card {

@@ -16,19 +16,18 @@ const Teams: React.FC = () => {
     const [continentIsReadyToFetch, setContinent] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const [minIndex, setMinIndex] = useState(0)
-    const [maxIndex, setMaxIndex] = useState(0)
+    const [maxIndex, setMaxIndex] = useState(12)
     const [pageSize, setPageSize] = useState(12)
 
     useEffect(() => {
         setCurrentPage(1)
         setMinIndex(0)
-        setMaxIndex(0)
+        setMaxIndex(12)
     }, [teams])
 
     useEffect(() => {
         if (country_id != 0) {
             fetchTeams(country_id)
-            console.log(country_id)
         }
 
     }, [country_id])

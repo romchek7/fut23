@@ -30,8 +30,8 @@ const TopScorers: React.FC = () => {
         <div className={styles.main}>
             {topScorers.length > 0
                 ? <div className={styles.playerWrapper}>
-                    {topScorers.map(topScorer =>
-                        <div className={styles.playerBox}>
+                    {topScorers.map((topScorer, idx) =>
+                        <div className={styles.playerBox} key={idx}>
                             <div className={styles.playerData}>
                                 <p><span>Position:</span> {topScorer.pos}</p>
                             </div>

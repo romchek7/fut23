@@ -28,8 +28,10 @@ const Stages: React.FC<StagesProps> = ({season_id}) => {
     return (
         <div className={styles.main}>
             {stages.length > 0
-                ? stages.map(stage =>
-                    <p key={stage.id}>{stage.name}</p>
+                ? stages.map((stage, idx) =>
+                    <div key={idx}>
+                        {stage.name}
+                    </div>
                 )
                 : <p>No results</p>}
         </div>
