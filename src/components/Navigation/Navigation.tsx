@@ -26,8 +26,8 @@ const Navigation: React.FC = () => {
             <LinkNavigation toPath={'/players'} text='Players'/>
             <LinkNavigation toPath={'/bookmakers'} text='Bookmakers'/>
             <LinkNavigation toPath={'/markets'} text='Markets'/>
-            <LinkNavigation toPath={'/venues'} text='Venues'/>
             <LinkNavigation toPath={'/referees'} text='Referees'/>
+            <LinkNavigation toPath={'/venues'} text='Venues'/>
         </nav>
     )
 }

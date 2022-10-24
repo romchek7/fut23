@@ -16,6 +16,7 @@ import playerReducer from "./playerReducer";
 import bookmakersReducer from "./bookmakersReducer";
 import marketsReducer from "./marketsReducer";
 import refereesReducer from "./refereesReducer";
+import venuesReducer from "./venuesReducer";
 
 const rootReducer = combineReducers({
     playersReducer,
@@ -34,7 +35,8 @@ const rootReducer = combineReducers({
     playerReducer,
     bookmakersReducer,
     marketsReducer,
-    refereesReducer
+    refereesReducer,
+    venuesReducer
 })
 
 export type AppStateType = ReturnType<typeof rootReducer>

@@ -91,3 +91,7 @@ export const getMarketsAPI = () => {
 export const getRefereesAPI = (country_id: number) => {
     return instance.get(`referees?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&country_id=${country_id}`)
 }
+
+export const getVenuesAPI = (country_id: number) => {
+    return instance.get(`venues?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&country_id=${country_id}`)
+}

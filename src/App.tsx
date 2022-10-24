@@ -14,6 +14,7 @@ import PlayerById from "./components/Players/PlayerById/PlayerById";
 import Bookmakers from "./components/Bookmakers/Bookmakers";
 import Markets from "./components/Markets/Markets";
 import Referees from "./components/Referees/Referees";
+import Venues from "./components/Venues/Venues";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                     <Route path={'/bookmakers'} element={<Bookmakers/>}/>
                     <Route path={'/markets'} element={<Markets/>}/>
                     <Route path={'/referees'} element={<Referees/>}/>
+                    <Route path={'/venues'} element={<Venues/>}/>
                 </Routes>
             </div>
             <Footer/>

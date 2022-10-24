@@ -1,0 +1,52 @@
+.main {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtersMain {
+    width: 20%;
+    margin-bottom: 100px;
+}
+
+.listMain {
+    width: 80%;
+}
+
+.wrapper {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-gap: 50px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.SelectCountry {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectCountry p {
+    font-size: 20px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(14, 82, 53);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
