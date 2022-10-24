@@ -8,7 +8,7 @@ import markets from "../../assets/img/markets.jpg";
 import venues from "../../assets/img/venues.jpg";
 import referees from "../../assets/img/referee.jpg";
 import {Link} from "react-router-dom";
-import LiveMatches from "./LiveMatches/LiveMatches";
+import NewsColumn from "./NewsColumn/NewsColumn";
 
 interface LinkBoxProps {
     text: string
@@ -40,7 +40,7 @@ const AppContent = () => {
                             <p>API: <a href='https://sportdataapi.com' target='_blank'>sportdataapi.com</a></p>
                         </div>
                         <div className={styles.swimTextBlock}>
-
+                            <NewsColumn/>
                         </div>
                     </div>
                 </div>
