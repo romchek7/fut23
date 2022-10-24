@@ -1,26 +1,25 @@
 .main {
     width: 100%;
-    min-height: 200px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px;
+}
+
+.filtersMain {
+    width: 20%;
     margin-bottom: 100px;
 }
 
-.content {
+.listMain {
     width: 80%;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.bookmakersWrapper {
+.wrapper {
+    margin-top: 20px;
     width: 100%;
-    min-height: 600px;
     display: grid;
-    grid-template-columns: repeat(4, 150px);
+    grid-template-columns: repeat(4, 50px);
     grid-gap: 50px;
     justify-content: space-evenly;
     justify-items: center;
@@ -28,9 +27,24 @@
     align-items: center;
 }
 
-.bookmakerBox {
-    height: 100px;
+.SelectCountry {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectCountry p {
+    font-size: 20px;
+}
+
+.box {
     width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(14, 82, 53);
     display: flex;
     align-items: center;
     justify-content: center;

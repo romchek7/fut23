@@ -13,6 +13,7 @@ import TopScorers from "./components/TopScorers/TopScorers";
 import PlayerById from "./components/Players/PlayerById/PlayerById";
 import Bookmakers from "./components/Bookmakers/Bookmakers";
 import Markets from "./components/Markets/Markets";
+import Referees from "./components/Referees/Referees";
 
 function App() {
     return (
@@ -38,6 +39,7 @@ function App() {
                     </Route>
                     <Route path={'/bookmakers'} element={<Bookmakers/>}/>
                     <Route path={'/markets'} element={<Markets/>}/>
+                    <Route path={'/referees'} element={<Referees/>}/>
                 </Routes>
             </div>
             <Footer/>
