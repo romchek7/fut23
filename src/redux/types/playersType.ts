@@ -42,3 +42,31 @@ export interface IFetchPlayersError {
 }
 
 export type PlayersActionTypes = IFetchPlayers | IFetchPlayersSuccess | IFetchPlayersError
+
+export interface IPlayerState {
+    player: IPlayer
+    loading: boolean
+    error: null | string
+}
+
+export enum fetchPlayerActionTypes {
+    FETCH_PLAYER = 'FETCH_PLAYER',
+    FETCH_PLAYER_SUCCESS = 'FETCH_PLAYER_SUCCESS',
+    FETCH_PLAYER_ERROR = 'FETCH_PLAYER_ERROR'
+}
+
+export interface IFetchPlayer {
+    type: fetchPlayerActionTypes.FETCH_PLAYER
+}
+
+export interface IFetchPlayerSuccess {
+    type: fetchPlayerActionTypes.FETCH_PLAYER_SUCCESS
+    payload: any
+}
+
+export interface IFetchPlayerError {
+    type: fetchPlayerActionTypes.FETCH_PLAYER_ERROR
+    payload: string
+}
+
+export type PlayerActionTypes = IFetchPlayer | IFetchPlayerSuccess | IFetchPlayerError

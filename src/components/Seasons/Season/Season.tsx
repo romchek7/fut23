@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styles from "./Season.module.css";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import useDispatchSeasons from "../../../hooks/useDispatchSeasons";
 import {useSelector} from "react-redux";
 import {getSeasonByIdSelector} from "../../../redux/selectors/seasonsSelector";
@@ -57,6 +57,12 @@ const Season: React.FC = () => {
                         ? <div>
                             <h1>Stages: </h1>
                             <Stages season_id={season?.season_id}/>
+                            <div className={styles.topScorers}>
+                                <h1>Top scorers: </h1>
+                                <p>
+                                    <Link to={`/topScorers/${season.season_id}`}>Show top scorers of season {season.name}</Link>
+                                </p>
+                            </div>
                         </div>
                         : <span></span>}
                     <hr className='horizontalLine'></hr>

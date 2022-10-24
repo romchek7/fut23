@@ -1,0 +1,29 @@
+.main {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 80%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content span {
+    display: flex;
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content img {
+    width: 200px;
+    height: 200px;
+}

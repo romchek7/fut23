@@ -11,6 +11,8 @@ import teamsReducer from "./teamsReducer";
 import matchesReducer from "./matchesReducer";
 import standingsReducer from "./standingsReducer";
 import teamReducer from "./teamReducer";
+import topScorersReducer from "./topScorersReducer";
+import playerReducer from "./playerReducer";
 
 const rootReducer = combineReducers({
     playersReducer,
@@ -24,7 +26,9 @@ const rootReducer = combineReducers({
     teamsReducer,
     matchesReducer,
     standingsReducer,
-    teamReducer
+    teamReducer,
+    topScorersReducer,
+    playerReducer
 })
 
 export type AppStateType = ReturnType<typeof rootReducer>

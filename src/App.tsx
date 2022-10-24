@@ -9,6 +9,8 @@ import Footer from "./components/Footer/Footer";
 import AppContent from "./components/AppContent/AppContent";
 import Season from "./components/Seasons/Season/Season";
 import Teams from "./components/Teams/Teams";
+import TopScorers from "./components/TopScorers/TopScorers";
+import PlayerById from "./components/Players/PlayerById/PlayerById";
 
 function App() {
     return (
@@ -26,6 +28,12 @@ function App() {
                         <Route path=':season_id' element={<Season/>}/>
                     </Route>
                     <Route path={'/teams'} element={<Teams/>}/>
+                    <Route path={'/topScorers'} element={<TopScorers/>}>
+                        <Route path=':season_id' element={<TopScorers/>}/>
+                    </Route>
+                    <Route path={'/player'} element={<PlayerById/>}>
+                        <Route path=':player_id' element={<PlayerById/>}/>
+                    </Route>
                 </Routes>
             </div>
             <Footer/>

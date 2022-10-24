@@ -4,6 +4,7 @@ import styles from "./Player.module.css";
 import card from "../../../assets/img/card.png";
 import icon from "../../../assets/img/account.png";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import {Link} from "react-router-dom";
 
 interface IPlayerProps {
     player: IPlayer
@@ -17,8 +18,9 @@ const Player: React.FC<IPlayerProps> = ({player}) => {
                 <span className={`fi fi-${player.country.country_code}`}></span>
                 <img src={player.img ? player.img : icon}/>
             </div>
-            <p>{player.firstname}</p>
-            <p>{player.lastname}</p>
+            <Link to={`/player/${player.player_id}`} target='_blank'>
+                <p>{player.firstname} {player.lastname}</p>
+            </Link>
             <p>{player.birthday}</p>
         </div>
     )

@@ -71,3 +71,11 @@ export const getMatchesAPI = (season_id: number, live: boolean, status_code: num
 export const getStandings = (season_id: number) => {
     return instance.get(`standings?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
+
+export const getTopscorers = (season_id: number) => {
+    return instance.get(`topscorers?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
+}
+
+export const getPlayerByIdAPI = (player_id: number) => {
+    return instance.get(`players/${player_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
+}
