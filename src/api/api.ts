@@ -83,3 +83,7 @@ export const getPlayerByIdAPI = (player_id: number) => {
 export const getBookmakersAPI = () => {
     return instance.get('bookmakers?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb')
 }
+
+export const getMarketsAPI = () => {
+    return instance.get('markets?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb')
+}

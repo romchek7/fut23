@@ -20,7 +20,7 @@
     width: 100%;
     min-height: 600px;
     display: grid;
-    grid-template-columns: repeat(4, 150px);
+    grid-template-columns: repeat(1, 100%);
     grid-gap: 50px;
     justify-content: space-evenly;
     justify-items: center;
@@ -29,10 +29,11 @@
 }
 
 .marketBox {
-    height: 100px;
-    width: 200px;
+    width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: linear-gradient(to right, rgba(210, 210, 210, 0), rgba(210, 210, 210, 0.7), rgba(210, 210, 210, 0));
 }
