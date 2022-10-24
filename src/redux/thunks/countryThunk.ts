@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {getLeagueActionType, LeagueActionTypes} from "../types/leaguesType";
-import {getCountry, getLeague} from "../../api/api";
+import {getCountryAPI, getLeagueAPI} from "../../api/api";
 import {CountryActionTypes, fetchCountryActionTypes} from "../types/countriesType";
 
 export const fetchCountry = (country_id: number) => {
@@ -13,7 +13,7 @@ export const fetchCountry = (country_id: number) => {
             let response = null
 
             if (country_id) {
-                response = await getCountry(country_id)
+                response = await getCountryAPI(country_id)
             }
 
             if (response) {

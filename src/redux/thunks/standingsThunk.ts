@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {getStandingsActionTypes, StandingsActionTypes} from "../types/Standings";
-import {getStandings} from "../../api/api";
+import {getStandingsAPI} from "../../api/api";
 
 export const fetchStandings = (season_id: number) => {
     return async (dispatch: Dispatch<StandingsActionTypes>) => {
@@ -9,7 +9,7 @@ export const fetchStandings = (season_id: number) => {
                 type: getStandingsActionTypes.FETCH_STANDINGS
             })
 
-            const response = await getStandings(season_id)
+            const response = await getStandingsAPI(season_id)
 
             if (response.data) {
                 dispatch({

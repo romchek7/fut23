@@ -13,26 +13,26 @@ export const getPlayersAPI = (country_id: number, max_age?: number, min_age?: nu
     }
 }
 
-export const getCountries = (continent?: string) => {
+export const getCountriesAPI = (continent?: string) => {
     return instance.get(`countries?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&continent=${continent}`)
 }
 
-export const getCountry = (country_id: number) => {
+export const getCountryAPI = (country_id: number) => {
     return instance.get(`countries/${country_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
 }
 
-export const getLeagues = (country_id?: number) => {
+export const getLeaguesAPI = (country_id?: number) => {
     if (country_id) {
         return instance.get(`leagues?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&country_id=${country_id}`)
     }
     return instance.get(`leagues?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&subscribed=true`)
 }
 
-export const getLeague = (league_id: number) => {
+export const getLeagueAPI = (league_id: number) => {
     return instance.get(`leagues/${league_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
 }
 
-export const getSeasons = (league_id: number) => {
+export const getSeasonsAPI = (league_id: number) => {
     return instance.get(`seasons?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&league_id=${league_id}`)
 }
 
@@ -68,14 +68,18 @@ export const getMatchesAPI = (season_id: number, live: boolean, status_code: num
     return instance.get(`matches?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
 
-export const getStandings = (season_id: number) => {
+export const getStandingsAPI = (season_id: number) => {
     return instance.get(`standings?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
 
-export const getTopscorers = (season_id: number) => {
+export const getTopscorersAPI = (season_id: number) => {
     return instance.get(`topscorers?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb&season_id=${season_id}`)
 }
 
 export const getPlayerByIdAPI = (player_id: number) => {
     return instance.get(`players/${player_id}?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb`)
+}
+
+export const getBookmakersAPI = () => {
+    return instance.get('bookmakers?apikey=6e8f4ee0-41a0-11ed-8969-8777766ceadb')
 }

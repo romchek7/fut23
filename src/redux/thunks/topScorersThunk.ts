@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {getTopScorersActionTypes, TopScorersActionType} from "../types/topScorersType";
-import {getTopscorers} from "../../api/api";
+import {getTopscorersAPI} from "../../api/api";
 
 export const fetchTopScorers = (season_id: number) => {
     return async (dispatch: Dispatch<TopScorersActionType>) => {
@@ -9,7 +9,7 @@ export const fetchTopScorers = (season_id: number) => {
                 type: getTopScorersActionTypes.FETCH_TOPSCORERS
             })
 
-            const response = await getTopscorers(season_id)
+            const response = await getTopscorersAPI(season_id)
 
             if (response.data) {
                 dispatch({

@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {getLeagueActionType, LeagueActionTypes} from "../types/leaguesType";
-import {getLeague} from "../../api/api";
+import {getLeagueAPI} from "../../api/api";
 
 export const fetchLeague = (league_id?: number) => {
     return async (dispatch: Dispatch<LeagueActionTypes>) => {
@@ -12,7 +12,7 @@ export const fetchLeague = (league_id?: number) => {
             let response = null
 
             if (league_id) {
-                response = await getLeague(league_id)
+                response = await getLeagueAPI(league_id)
             }
 
             if (response) {

@@ -5,7 +5,7 @@ import {
     SeasonByIdActionTypes,
     SeasonsActionTypes
 } from "../types/seasonsType";
-import {getSeasonByIdAPI, getSeasons} from "../../api/api";
+import {getSeasonByIdAPI, getSeasonsAPI} from "../../api/api";
 
 export const fetchSeasons = (league_id: number) => {
     return async (dispatch: Dispatch<SeasonsActionTypes>) => {
@@ -14,7 +14,7 @@ export const fetchSeasons = (league_id: number) => {
                 type: getSeasonsActionType.FETCH_SEASONS
             })
 
-            const response = await getSeasons(league_id)
+            const response = await getSeasonsAPI(league_id)
 
             if (response) {
                 dispatch({

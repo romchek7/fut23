@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {CountriesActionTypes, fetchCountriesActionTypes, ICountry} from "../types/countriesType";
-import {getCountries} from "../../api/api";
+import {getCountriesAPI} from "../../api/api";
 
 export const fetchCountries = (continent?: string) => {
     return async (dispatch: Dispatch<CountriesActionTypes>) => {
@@ -9,7 +9,7 @@ export const fetchCountries = (continent?: string) => {
                 type: fetchCountriesActionTypes.FETCH_COUNTRIES
             })
 
-            const response = await getCountries(continent)
+            const response = await getCountriesAPI(continent)
 
             if (response) {
                 const countries = Object.values(response.data.data) as ICountry[]
