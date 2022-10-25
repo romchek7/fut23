@@ -2,8 +2,6 @@
     width: 100%;
     min-height: 600px;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .filtersMain {
@@ -49,4 +47,36 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+@media (max-width: 1120px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 50px);
+    }
+}
+
+
+@media (max-width: 880px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .filtersMain {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .listMain {
+        width: 100%;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(2, 50px);
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 50px);
+    }
 }

@@ -36,3 +36,21 @@
     justify-content: center;
     flex-direction: column;
 }
+
+@media (max-width: 980px) {
+    .bookmakersWrapper {
+        grid-template-columns: repeat(3, 150px);
+    }
+}
+
+@media (max-width: 680px) {
+    .bookmakersWrapper {
+        grid-template-columns: repeat(2, 150px);
+    }
+}
+
+@media (max-width: 480px) {
+    .bookmakersWrapper {
+        grid-template-columns: repeat(1, 150px);
+    }
+}

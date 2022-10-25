@@ -20,6 +20,10 @@ const Referees: React.FC = () => {
     const [continentIsReadyToFetch, setContinent] = useState('')
 
     useEffect(() => {
+        window.scrollTo({behavior: 'smooth', top: 0})
+    }, [])
+
+    useEffect(() => {
         if (county_id != 0) {
             fetchReferees(county_id)
         }

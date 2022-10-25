@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./AppContent.module.css";
 import teamPhoto from "../../assets/img/team.jpg";
 import leaguesPhoto from "../../assets/img/leagues.jpg";
@@ -29,7 +29,11 @@ const LinkBox: React.FC <LinkBoxProps> = ({text, imageSRC, pathTo}) => {
     )
 }
 
-const AppContent = () => {
+const AppContent: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo({behavior: 'smooth', top: 0})
+    }, [])
+
     return (
         <div className={styles.main}>
             <div className={styles.photoHeader}>

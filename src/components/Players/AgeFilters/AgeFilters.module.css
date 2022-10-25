@@ -23,3 +23,13 @@
     border-radius: 5px;
     border-color: rgb(14, 82, 53);
 }
+
+@media (max-width: 860px) {
+    .filtersMain {
+        align-items: center;
+    }
+
+    .filtersForm {
+        width: 50%;
+    }
+}

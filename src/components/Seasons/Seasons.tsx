@@ -25,6 +25,7 @@ const Seasons: React.FC = () => {
             fetchSeasons(+params.league_id)
             fetchLeague(+params.league_id)
         }
+        window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
 
     useEffect(() => {
@@ -46,27 +47,28 @@ const Seasons: React.FC = () => {
             <h1>{league?.name}</h1>
             <div className={styles.seasons}>
                 <table>
-                    <tbody>
+                    <thead>
                     <tr>
-                        <th>Season</th>
-                        <th>League</th>
-                        <th>Country</th>
-                        <th>Is current</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th className={styles.showInfo}>Information</th>
+                        <th scope="col">SEASON</th>
+                        <th scope="col">LEAGUE</th>
+                        <th scope="col">COUNTRY</th>
+                        <th scope="col">IS CURRENT</th>
+                        <th scope="col">START DATE</th>
+                        <th scope="col">END  DATE</th>
+                        <th className={styles.showInfo} scope="col">INFORMATION</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {seasons.map(season =>
                         <tr key={season.season_id}>
-                            <td>{season.name}</td>
-                            <td>{league?.name}</td>
-                            <td>{country?.name}</td>
-                            <td>{season.is_current === 1 ? "Current" : "Finished"}</td>
-                            <td>{season.start_date}</td>
-                            <td>{season.end_date}</td>
-                            <td className={styles.showInfo}>
-                                <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show season
-                                    information</Link>
+                            <td data-label='Season'>{season.name}</td>
+                            <td data-label='League'>{league?.name}</td>
+                            <td data-label='Country'>{country?.name}</td>
+                            <td data-label='Is current'>{season.is_current === 1 ? "Current" : "Finished"}</td>
+                            <td data-label='Start date'>{season.start_date}</td>
+                            <td data-label='End date'>{season.end_date}</td>
+                            <td data-label='Information' className={styles.showInfo}>
+                                <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show info</Link>
                             </td>
                         </tr>
                     )}

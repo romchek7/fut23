@@ -21,6 +21,7 @@ const Standings: React.FC<StandingsProps> = ({season_id, country_id}) => {
     useEffect(() => {
         fetchStandings(season_id)
         fetchTeams(country_id)
+        window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
 
     if (loading) {
@@ -35,37 +36,44 @@ const Standings: React.FC<StandingsProps> = ({season_id, country_id}) => {
         <div className={styles.main}>
             {standingInfo.standings.length > 0
                 ? <table>
-                    <tbody>
+                    <thead>
                     <tr>
-                        <th>№</th>
-                        <th>Team</th>
-                        <th>Points</th>
-                        <th>Status</th>
-                        <th>Result</th>
-                        <th>Games played</th>
-                        <th>Won</th>
-                        <th>Draw</th>
-                        <th>Lost</th>
-                        <th>Goals diff</th>
-                        <th>Goals scored</th>
-                        <th>Goals against</th>
+                        <th scope="col">№</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Result</th>
+                        <th scope="col">Games played</th>
+                        <th scope="col">Won</th>
+                        <th scope="col">Draw</th>
+                        <th scope="col">Lost</th>
+                        <th scope="col">Goals diff</th>
+                        <th scope="col">Goals scored</th>
+                        <th scope="col">Goals against</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {standingInfo.standings.map((standing, idx) =>
                         <tr key={idx}>
-                            <td>{idx + 1}</td>
-                            <td>{
-                                teams.map(team => team.team_id === standing.team_id ? <img key={team.team_id} src={team.logo}/> : <span key={team.team_id}></span>)
+                            <td data-label='№'>{idx + 1}</td>
+                            <td data-label='Team'>{
+                                teams.map(team => team.team_id === standing.team_id
+                                    ? <div key={team.team_id} className={styles.teamNameLogo}>
+                                        <img src={team.logo}/>
+                                        <p>{team.name}</p>
+                                    </div>
+                                    : <span key={team.team_id}></span>)
                             }</td>
-                            <td>{standing.points}</td>
-                            <td>{standing.status}</td>
-                            <td>{standing.result}</td>
-                            <td>{standing.overall.games_played}</td>
-                            <td>{standing.overall.won}</td>
-                            <td>{standing.overall.draw}</td>
-                            <td>{standing.overall.lost}</td>
-                            <td>{standing.overall.goals_diff}</td>
-                            <td>{standing.overall.goals_scored}</td>
-                            <td>{standing.overall.goals_against}</td>
+                            <td data-label='Points'>{standing.points}</td>
+                            <td data-label='Status'>{standing.status}</td>
+                            <td data-label='Result'>{standing.result}</td>
+                            <td data-label='Games played'>{standing.overall.games_played}</td>
+                            <td data-label='Won'>{standing.overall.won}</td>
+                            <td data-label='Draw'>{standing.overall.draw}</td>
+                            <td data-label='Lost'>{standing.overall.lost}</td>
+                            <td data-label='Goals diff'>{standing.overall.goals_diff}</td>
+                            <td data-label='Goals scored'>{standing.overall.goals_scored}</td>
+                            <td data-label='Goals against'>{standing.overall.goals_against}</td>
                         </tr>
                     )}
                     </tbody>

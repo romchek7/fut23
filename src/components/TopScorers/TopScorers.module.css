@@ -7,49 +7,47 @@
     justify-content: center;
 }
 
-.playerWrapper {
+.main table {
     width: 80%;
-    min-height: 500px;
-    display: grid;
-    grid-template-columns: repeat(1, 100%);
-    grid-gap: 10px;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
 }
 
-.playerBox {
-    width: 100%;
-    border-top: solid;
-    border-bottom: solid;
-    border-width: thin;
-    border-color: rgb(14, 82, 53);
-    display: flex;
-    flex-direction: row;
-}
+@media (max-width: 930px) {
+    .main table {
+        font-size: 15px;
+    }
 
-.playerData {
-    width: 20%;
-    border-left: solid;
-    border-width: thin;
-    border-color: rgb(14, 82, 53);
-}
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
 
-.playerDataRight {
-    width: 20%;
-    border-left: solid;
-    border-right: solid;
-    border-width: thin;
-    border-color: rgb(14, 82, 53);
-}
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
 
-.playerData p, .playerDataRight p {
-    padding: 10px;
-}
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
 
-.playerData p span, .playerDataRight p span {
-    padding-right: 10px;
-    font-weight: bold;
-    color: rgb(14, 82, 53);
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
 }

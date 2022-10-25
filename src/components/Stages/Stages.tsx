@@ -15,6 +15,7 @@ const Stages: React.FC<StagesProps> = ({season_id}) => {
 
     useEffect(() => {
         fetchStages(season_id)
+        window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
 
     if (loadingStages) {

@@ -100,30 +100,28 @@ const Matches: React.FC<MatchesProps> = ({season_id, live, date_from, date_to}) 
             <div className={styles.matchesBox}>
                 {matches.length > 0
                     ? <table>
-                        <tbody>
+                        <thead>
                         <tr>
-                            <th>Status</th>
-                            <th>Match start</th>
-                            <th>Home team</th>
-                            <th>Full time</th>
-                            <th>Away team</th>
-                            <th>Venue</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Match start</th>
+                            <th scope="col">Home team</th>
+                            <th scope="col">Full time</th>
+                            <th scope="col">Away team</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         {matches.map(match =>
                             <tr key={match.match_id}>
-                                <td>{match.status ? match.status : '-----'}</td>
-                                <td>{match.match_start}</td>
-                                <td className={styles.teamTd}>
+                                <td data-label='Status'>{match.status ? match.status : '-----'}</td>
+                                <td data-label='Match start'>{match.match_start}</td>
+                                <td className={styles.teamTd} data-label='Home team'>
                                     <img src={match.home_team.logo}/>
                                     {match.home_team.name}
                                 </td>
-                                <td className={styles.fullTime}>{match.stats.ft_score ? match.stats.ft_score : '-----'}</td>
-                                <td className={styles.teamTd}>
+                                <td data-label='Full time' className={styles.fullTime}>{match.stats.ft_score ? match.stats.ft_score : '-----'}</td>
+                                <td data-label='Away team' className={styles.teamTd}>
                                     <img src={match.away_team.logo}/>
                                     {match.away_team.name}
-                                </td>
-                                <td>
-                                    {match.venue ? match.venue.name : '-----'}
                                 </td>
                             </tr>
                         )}

@@ -23,6 +23,10 @@ const Players: React.FC = () => {
     const [maxAge, setMaxAge] = useState(0)
 
     useEffect(() => {
+        window.scrollTo({behavior: 'smooth', top: 0})
+    }, [])
+
+    useEffect(() => {
         if (county_id != 0) {
             if (minAge > 0 && maxAge > 0) {
                 fetchPlayers(county_id, maxAge, minAge)

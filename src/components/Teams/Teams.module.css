@@ -30,6 +30,7 @@
 
 .teamBox {
     padding: 20px;
+    height: 300px;
     width: 200px;
     border-style: solid;
     border-radius: 5px;
@@ -54,4 +55,36 @@
 
 .SelectCountry p {
     font-size: 20px;
+}
+
+@media (max-width: 1120px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .countiesBlock {
+        width: 100%;
+    }
+
+    .teamsBlock {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .teamsWrapper {
+        grid-template-columns: repeat(3, 50px);
+    }
+}
+
+@media (max-width: 700px) {
+    .teamsWrapper {
+        grid-template-columns: repeat(2, 50px);
+    }
+}
+
+@media (max-width: 480px) {
+    .teamsWrapper {
+        grid-template-columns: repeat(1, 50px);
+    }
 }

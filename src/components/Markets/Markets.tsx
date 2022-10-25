@@ -11,6 +11,7 @@ const Markets: React.FC = () => {
 
     useEffect(() => {
         fetchMarkets()
+        window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
 
     if (loading) {

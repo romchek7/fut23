@@ -20,6 +20,10 @@ const Teams: React.FC = () => {
     const [pageSize, setPageSize] = useState(12)
 
     useEffect(() => {
+        window.scrollTo({behavior: 'smooth', top: 0})
+    }, [])
+
+    useEffect(() => {
         setCurrentPage(1)
         setMinIndex(0)
         setMaxIndex(12)
@@ -29,7 +33,6 @@ const Teams: React.FC = () => {
         if (country_id != 0) {
             fetchTeams(country_id)
         }
-
     }, [country_id])
 
     useEffect(() => {

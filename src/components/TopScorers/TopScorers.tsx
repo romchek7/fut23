@@ -16,6 +16,7 @@ const TopScorers: React.FC = () => {
         if (params.season_id) {
             fetchTopScorers(+params.season_id)
         }
+        window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
 
     if (loading) {
@@ -29,40 +30,42 @@ const TopScorers: React.FC = () => {
     return (
         <div className={styles.main}>
             {topScorers.length > 0
-                ? <div className={styles.playerWrapper}>
+                ? <table>
+                    <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Matches played</th>
+                        <th scope="col">Minutes played</th>
+                        <th scope="col">Substituted in</th>
+                        <th scope="col">Goals</th>
+                        <th scope="col">Home goals</th>
+                        <th scope="col">Away goals</th>
+                        <th scope="col">Penalties</th>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {topScorers.map((topScorer, idx) =>
-                        <div className={styles.playerBox} key={idx}>
-                            <div className={styles.playerData}>
-                                <p><span>Position:</span> {topScorer.pos}</p>
-                            </div>
-                            <div className={styles.playerData}>
+                        <tr key={idx}>
+                            <td data-label='Position'>{topScorer.pos}</td>
+                            <td data-label='Name'>
                                 <Link to={`/player/${topScorer.player.player_id}`} target='_blank'>
-                                    <p><span>Name:</span> {topScorer.player.player_name}</p>
+                                    <p>{topScorer.player.player_name}</p>
                                 </Link>
-                            </div>
-                            <div className={styles.playerData}>
-                                <p><span>Team:</span> {topScorer.team.team_name}</p>
-                            </div>
-                            <div className={styles.playerData}>
-                                <p><span>Matches played:</span> {topScorer.matches_played ? topScorer.matches_played : 0}</p>
-                            </div>
-                            <div className={styles.playerData}>
-                                <p><span>Minutes played:</span> {topScorer.minutes_played ? topScorer.minutes_played : 0}</p>
-                            </div>
-                            <div className={styles.playerData}>
-                                <p><span>Substituted in:</span> {topScorer.substituted_in ? topScorer.substituted_in : 0}</p>
-                            </div>
-                            <div className={styles.playerData}>
-                                <p><span>Goals:</span>{topScorer.goals.overall ? topScorer.goals.overall : 0}</p>
-                                <p><span>Home goals:</span>{topScorer.goals.home ? topScorer.goals.home : 0}</p>
-                                <p><span>Away goals:</span>{topScorer.goals.away ? topScorer.goals.away : 0}</p>
-                            </div>
-                            <div className={styles.playerDataRight}>
-                                <p><span>Penalties:</span>{topScorer.penalties ? topScorer.penalties : 0}</p>
-                            </div>
-                        </div>
+                            </td>
+                            <td data-label='Team'>{topScorer.team.team_name}</td>
+                            <td data-label='Matches played'>{topScorer.matches_played}</td>
+                            <td data-label='Minutes played'>{topScorer.minutes_played}</td>
+                            <td data-label='Substituted in'>{topScorer.substituted_in ? topScorer.substituted_in : 0}</td>
+                            <td data-label='Goals'>{topScorer.goals.overall}</td>
+                            <td data-label='Home goals'>{topScorer.goals.home ? topScorer.goals.home : 0}</td>
+                            <td data-label='Away goals'>{topScorer.goals.away ? topScorer.goals.away : 0}</td>
+                            <td data-label='Penalties'>{topScorer.penalties ? topScorer.penalties : 0}</td>
+                        </tr>
                     )}
-                </div>
+                    </tbody>
+                </table>
                 : <div>No results</div>}
         </div>
     )

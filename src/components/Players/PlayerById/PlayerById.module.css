@@ -27,3 +27,9 @@
     width: 200px;
     height: 200px;
 }
+
+@media (max-width: 780px) {
+    .main {
+        min-height: 800px;
+    }
+}

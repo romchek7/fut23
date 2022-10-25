@@ -19,6 +19,10 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
     const continents = ['Africa', 'Asia', 'Europe', 'Oceania', 'North America', 'South America']
 
     useEffect(() => {
+        window.scrollTo({behavior: 'smooth', top: 0})
+    }, [])
+
+    useEffect(() => {
         if (continentIsReadyToFetch != '') {
             fetchCountries(continentIsReadyToFetch)
         }

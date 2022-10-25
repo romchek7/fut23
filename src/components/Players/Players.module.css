@@ -35,3 +35,45 @@
 .SelectCountry p {
     font-size: 20px;
 }
+
+@media (max-width: 1120px) {
+    .playersWrapper {
+        grid-template-columns: repeat(3, 50px);
+    }
+}
+
+@media (max-width: 860px) {
+    .playersMain {
+        flex-direction: column;
+    }
+
+    .filtersMain {
+        width: 100%;
+    }
+
+    .playersListMain {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .playersWrapper {
+        grid-template-columns: repeat(3, 50px);
+    }
+
+    .SelectCountry {
+        width: 100%;
+    }
+}
+
+@media (max-width: 690px) {
+    .playersWrapper {
+        grid-template-columns: repeat(2, 50px);
+    }
+}
+
+@media (max-width: 480px) {
+    .playersWrapper {
+        grid-template-columns: repeat(1, 50px);
+    }
+}
