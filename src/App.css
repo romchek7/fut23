@@ -10,3 +10,9 @@ a {
     margin-top: 50px;
     width: 100%;
 }
+
+@media (max-width: 780px) {
+    .AppContent {
+        margin-top: 0;
+    }
+}
