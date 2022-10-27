@@ -4,18 +4,23 @@ import styles from "./Navigation.module.css"
 import {MenuOutlined, CloseOutlined, SettingOutlined} from '@ant-design/icons';
 import {Trans, useTranslation} from "react-i18next";
 
-interface ILinkNavigation {
+interface ILinkNavigationProps {
     toPath: string
     text: string
+    setShowMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const LinkNavigation = (props: ILinkNavigation) => {
+const LinkNavigation: React.FC <ILinkNavigationProps> = ({toPath, text, setShowMenu}) => {
     const {t} = useTranslation()
 
+    const onClickSetShowMenu = () => {
+        setShowMenu(false)
+    }
+
     return (
-        <Link to={props.toPath}>
+        <Link to={toPath} onClick={onClickSetShowMenu}>
             <div className={styles.navLinkText}>
-                <Trans t={t}>{props.text}</Trans>
+                <Trans t={t}>{text}</Trans>
             </div>
         </Link>
     )
@@ -30,15 +35,15 @@ const Navigation: React.FC = () => {
                 {showMenu ? <CloseOutlined /> : <MenuOutlined />}
             </div>
             <nav className={showMenu ? styles.navMobile : styles.nav}>
-                <LinkNavigation toPath={'/'} text='Home'/>
-                <LinkNavigation toPath={'/leagues'} text='Leagues'/>
-                <LinkNavigation toPath={'/teams'} text='Teams'/>
-                <LinkNavigation toPath={'/players'} text='Players'/>
-                <LinkNavigation toPath={'/bookmakers'} text='Bookmakers'/>
-                <LinkNavigation toPath={'/markets'} text='Markets'/>
-                <LinkNavigation toPath={'/referees'} text='Referees'/>
-                <LinkNavigation toPath={'/venues'} text='Venues'/>
-                <Link to={'/settings'} className={styles.settings}>
+                <LinkNavigation toPath={'/'} text='Home' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/leagues'} text='Leagues' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/teams'} text='Teams' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/players'} text='Players' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/bookmakers'} text='Bookmakers' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/markets'} text='Markets' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/referees'} text='Referees' setShowMenu={setShowMenu}/>
+                <LinkNavigation toPath={'/venues'} text='Venues' setShowMenu={setShowMenu}/>
+                <Link to={'/settings'} className={styles.settings} onClick={() => setShowMenu(false)}>
                     <SettingOutlined/>
                 </Link>
             </nav>
