@@ -9,8 +9,11 @@ import {getLeague} from "../../../redux/selectors/leaguesSelector";
 import Stages from "../../Stages/Stages";
 import Matches from "../../Matches/Matches";
 import Standings from "../../Standings/Standings";
+import {Trans, useTranslation} from "react-i18next";
 
 const Season: React.FC = () => {
+    const {t} = useTranslation()
+
     const params = useParams()
 
     const {getSeasonByIdThunk} = useDispatchSeasons()
@@ -47,20 +50,20 @@ const Season: React.FC = () => {
                     <div className={styles.fixedSeasonInfo}>
                         <h1>{season?.name}</h1>
                         <h1>{league?.name}</h1>
-                        <p>{season?.is_current === 1 ? "Current" : "Finished"}</p>
-                        <p>Start date: {season?.start_date}</p>
-                        <p>End date: {season?.end_date}</p>
+                        <p>{season?.is_current === 1 ? <Trans t={t}>Current</Trans> : <Trans t={t}>Finished</Trans>}</p>
+                        <p><Trans t={t}>Start date</Trans>: {season?.start_date}</p>
+                        <p><Trans t={t}>End date</Trans>: {season?.end_date}</p>
                     </div>
                 </div>
                 <div className={styles.seasonsParams}>
                     {season?.season_id
                         ? <div className={styles.infoBlock1}>
-                            <h1>Stages: </h1>
+                            <h1><Trans t={t}>Stages</Trans>: </h1>
                             <Stages season_id={season?.season_id}/>
                             <div className={styles.topScorers}>
                                 <h1>
                                     <Link to={`/topScorers/${season.season_id}`}>
-                                        Top scorers of season {season.name}
+                                        <Trans t={t}>Top scorers of season</Trans> {season.name}
                                     </Link>
                                 </h1>
                             </div>
@@ -68,13 +71,13 @@ const Season: React.FC = () => {
                         : <span></span>}
                     {season?.season_id
                         ? <div>
-                            <h1 className={styles.infoBlock1}>Standings: </h1>
+                            <h1 className={styles.infoBlock1}><Trans t={t}>Standings</Trans>: </h1>
                             <Standings season_id={season.season_id} country_id={season.country_id}/>
                         </div>
                         : <span></span>}
                     {season?.season_id
                         ? <div>
-                            <h1 className={styles.infoBlock1}>Matches: </h1>
+                            <h1 className={styles.infoBlock1}><Trans t={t}>Matches</Trans>: </h1>
                             <Matches season_id={season?.season_id} live={season?.is_current === 1}
                                      date_from={season.start_date} date_to={season.end_date}/>
                         </div>

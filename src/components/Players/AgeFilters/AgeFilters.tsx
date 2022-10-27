@@ -1,8 +1,8 @@
 import React from "react";
 import {useFormik} from "formik";
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Tooltip } from 'antd';
 import styles from "./AgeFilters.module.css";
+import {useTranslation, Trans} from "react-i18next";
 
 interface AgeFiltersProps {
     setMinAge: React.Dispatch<React.SetStateAction<number>>
@@ -23,18 +23,20 @@ const AgeFilters: React.FC <AgeFiltersProps> = ({setMinAge, setMaxAge, minAge, m
         }
     })
 
+    const {t} = useTranslation()
+
     return (
         <div className={styles.filtersMain}>
             <form className={styles.filtersForm} onSubmit={formik.handleSubmit}>
                 <div>
-                    <label>Min age:</label>
+                    <label><Trans t={t}>Min age</Trans>:</label>
                     <input type='number' id='minAge' name='minAge' onChange={formik.handleChange} value={formik.values.minAge} placeholder={'1-100'}/>
 
-                    <label>Max age:</label>
+                    <label><Trans t={t}>Max age</Trans>:</label>
                     <input type='number' id='maxAge' name='maxAge' onChange={formik.handleChange} value={formik.values.maxAge} placeholder={'1-100'}/>
 
                     <button type='submit' className='SearchBtn'>
-                        <SearchOutlined /> Search
+                        <SearchOutlined /> <Trans t={t}>Search</Trans>
                     </button>
                 </div>
             </form>

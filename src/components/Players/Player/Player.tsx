@@ -15,7 +15,12 @@ const Player: React.FC<IPlayerProps> = ({player}) => {
         <div className={styles.playerBox}>
             <img src={card} className={styles.card}/>
             <div className={styles.cardWrapper}>
-                <span className={`fi fi-${player.country.country_code}`}></span>
+                <span className={player.country.country_code === 'en' ? `fi fi-gb-eng`
+                    : player.country.country_code === 'n' ? `fi fi-gb-nir`
+                        : player.country.country_code === 'w' ? `fi fi-gb-wls`
+                            : player.country.country_code === 's' ? `fi fi-gb-sct`
+                                : `fi fi-${player.country.country_code}`
+                }></span>
                 <img src={player.img ? player.img : icon}/>
             </div>
             <Link to={`/player/${player.player_id}`} target='_blank'>

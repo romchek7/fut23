@@ -7,6 +7,7 @@ import styles from "./Players.module.css";
 import PaginationFC from "../assets/Pagination/Pagination";
 import Countries from "../Countries/Countries";
 import AgeFilters from "./AgeFilters/AgeFilters";
+import SelectCountry from "../assets/SelectCountry/SelectCountry";
 
 const Players: React.FC = () => {
     const {fetchPlayers} = useDispatchPlayers()
@@ -75,11 +76,7 @@ const Players: React.FC = () => {
                                   totalCount={players.length} setCurrentPage={setCurrentPage}
                                   setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                 </div>
-                : <div className={styles.SelectCountry}>
-                    <p>
-                        Select country
-                    </p>
-                </div>}
+                : <SelectCountry/>}
         </div>
     )
 }

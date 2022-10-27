@@ -8,8 +8,11 @@ import useDispatchLeague from "../../hooks/useDispatchLeague";
 import {getLeague} from "../../redux/selectors/leaguesSelector";
 import useDispatchCountry from "../../hooks/useDispatchCountry";
 import {fetchCountrySelector} from "../../redux/selectors/countriesSelector";
+import {Trans, useTranslation} from "react-i18next";
 
 const Seasons: React.FC = () => {
+    const {t} = useTranslation()
+
     const params = useParams()
 
     const {fetchSeasons} = useDispatchSeasons()
@@ -49,26 +52,26 @@ const Seasons: React.FC = () => {
                 <table>
                     <thead>
                     <tr>
-                        <th scope="col">SEASON</th>
-                        <th scope="col">LEAGUE</th>
-                        <th scope="col">COUNTRY</th>
-                        <th scope="col">IS CURRENT</th>
-                        <th scope="col">START DATE</th>
-                        <th scope="col">END  DATE</th>
-                        <th className={styles.showInfo} scope="col">INFORMATION</th>
+                        <th scope="col"><Trans t={t}>Season</Trans></th>
+                        <th scope="col"><Trans t={t}>League</Trans></th>
+                        <th scope="col"><Trans t={t}>Country</Trans></th>
+                        <th scope="col"><Trans t={t}>Is current</Trans></th>
+                        <th scope="col"><Trans t={t}>Start date</Trans></th>
+                        <th scope="col"><Trans t={t}>End date</Trans></th>
+                        <th className={styles.showInfo} scope="col"><Trans t={t}>Information</Trans></th>
                     </tr>
                     </thead>
                     <tbody>
                     {seasons.map(season =>
                         <tr key={season.season_id}>
-                            <td data-label='Season'>{season.name}</td>
-                            <td data-label='League'>{league?.name}</td>
-                            <td data-label='Country'>{country?.name}</td>
-                            <td data-label='Is current'>{season.is_current === 1 ? "Current" : "Finished"}</td>
-                            <td data-label='Start date'>{season.start_date}</td>
-                            <td data-label='End date'>{season.end_date}</td>
-                            <td data-label='Information' className={styles.showInfo}>
-                                <Link className='SearchBtn' to={`/season/${season.season_id}`}>Show info</Link>
+                            <td data-label={`${t('Season')}`}>{season.name}</td>
+                            <td data-label={`${t('League')}`}>{league?.name}</td>
+                            <td data-label={`${t('Country')}`}><Trans t={t}>{country?.name}</Trans></td>
+                            <td data-label={`${t('Is current')}`}>{season.is_current === 1 ? <Trans t={t}>Current</Trans> : <Trans t={t}>Finished</Trans>}</td>
+                            <td data-label={`${t('Start date')}`}>{season.start_date}</td>
+                            <td data-label={`${t('End date')}`}>{season.end_date}</td>
+                            <td data-label={`${t('Information')}`} className={styles.showInfo}>
+                                <Link className='SearchBtn' to={`/season/${season.season_id}`}><Trans t={t}>Show info</Trans></Link>
                             </td>
                         </tr>
                     )}

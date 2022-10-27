@@ -27,7 +27,7 @@
 }
 
 .leagueBox {
-    width: 120px;
+    width: 200px;
     height: 120px;
     border-style: solid;
     border-radius: 5px;
@@ -44,7 +44,7 @@
     margin-bottom: 10px;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1120px) {
     .main {
         flex-direction: column;
     }
@@ -64,8 +64,8 @@
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 690px) {
     .leaguesWrapper {
-        grid-template-columns: repeat(2, 50px);
+        grid-template-columns: repeat(1, 50px);
     }
 }

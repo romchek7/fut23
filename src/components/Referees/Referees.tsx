@@ -6,6 +6,7 @@ import {getRefereesSelector} from "../../redux/selectors/refereesSelector";
 import useDispatchReferees from "../../hooks/useDispatchReferees";
 import PaginationFC from "../assets/Pagination/Pagination";
 import icon from "../../assets/img/account.png";
+import SelectCountry from "../assets/SelectCountry/SelectCountry";
 
 const Referees: React.FC = () => {
     const {referees, loading, error} = useSelector(getRefereesSelector)
@@ -81,11 +82,7 @@ const Referees: React.FC = () => {
                                   totalCount={referees.length} setCurrentPage={setCurrentPage}
                                   setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                 </div>
-                : <div className={styles.SelectCountry}>
-                    <p>
-                        Select country
-                    </p>
-                </div>}
+                : <SelectCountry/>}
         </div>
     )
 }

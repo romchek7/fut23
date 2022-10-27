@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 import PaginationFC from "../assets/Pagination/Pagination";
 import useDispatchVenues from "../../hooks/useDispatchVenues";
 import {getVenuesSelector} from "../../redux/selectors/venuesSelector";
+import SelectCountry from "../assets/SelectCountry/SelectCountry";
 
 const Venues: React.FC = () => {
     const {venues, loading, error} = useSelector(getVenuesSelector)
@@ -74,11 +75,7 @@ const Venues: React.FC = () => {
                                   totalCount={venues.length} setCurrentPage={setCurrentPage}
                                   setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                 </div>
-                : <div className={styles.SelectCountry}>
-                    <p>
-                        Select country
-                    </p>
-                </div>}
+                : <SelectCountry/>}
         </div>
     )
 }

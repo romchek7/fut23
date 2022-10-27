@@ -15,6 +15,7 @@ import Bookmakers from "./components/Bookmakers/Bookmakers";
 import Markets from "./components/Markets/Markets";
 import Referees from "./components/Referees/Referees";
 import Venues from "./components/Venues/Venues";
+import Settings from "./components/Settings/Settings";
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                     <Route path={'/markets'} element={<Markets/>}/>
                     <Route path={'/referees'} element={<Referees/>}/>
                     <Route path={'/venues'} element={<Venues/>}/>
+                    <Route path={'/settings'} element={<Settings/>}/>
                 </Routes>
             </div>
             <Footer/>

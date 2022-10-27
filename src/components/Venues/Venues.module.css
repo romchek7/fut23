@@ -25,18 +25,6 @@
     align-items: center;
 }
 
-.SelectCountry {
-    width: 80%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.SelectCountry p {
-    font-size: 20px;
-}
-
 .box {
     width: 200px;
     height: 200px;

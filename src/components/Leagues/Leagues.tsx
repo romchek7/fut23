@@ -6,19 +6,24 @@ import {getLeagues} from "../../redux/selectors/leaguesSelector";
 import Countries from "../Countries/Countries";
 import {ILeague} from "../../redux/types/leaguesType";
 import {NavLink} from "react-router-dom";
+import {Trans, useTranslation} from "react-i18next";
 
 interface LeagueProps {
     leagues: ILeague[]
 }
 
 const League: React.FC <LeagueProps> = ({leagues}) => {
+    const {t} = useTranslation()
+
     return (
         <div className={styles.leaguesWrapper}>
             {leagues.map(league =>
                 <div className={styles.leagueBox} key={league.league_id}>
                     {league.name}
                     <NavLink className={styles.ShowSeasonsNavlink} to={`/seasons/${league.league_id}`}>
-                        <button className='SearchBtn'>Show seasons</button>
+                        <button className='SearchBtn'>
+                            <Trans t={t}>Show seasons</Trans>
+                        </button>
                     </NavLink>
                 </div>
             )}
@@ -27,6 +32,8 @@ const League: React.FC <LeagueProps> = ({leagues}) => {
 }
 
 const Leagues: React.FC = () => {
+    const {t} = useTranslation()
+
     const {fetchLeagues} = useDispatchLeagues()
 
     const {leagues, loadingLeagues, errorLeagues} = useSelector(getLeagues)
@@ -63,7 +70,9 @@ const Leagues: React.FC = () => {
                            continentIsReadyToFetch={continentIsReadyToFetch} setContinent={setContinent}/>
             </div>
             <div className={styles.content}>
-                <h1>Subscribed:</h1>
+                <h1>
+                    <Trans t={t}>Subscribed</Trans>:
+                </h1>
                 <League leagues={leagues}/>
             </div>
         </div>

@@ -3,6 +3,7 @@ import useDispatchCountries from "../../hooks/useDispatchCountries";
 import {fetchCountriesSelector} from "../../redux/selectors/countriesSelector";
 import {useSelector} from "react-redux";
 import styles from "./Countries.module.css";
+import {Trans, useTranslation} from "react-i18next";
 
 interface CountriesProps {
     setCountryID: React.Dispatch<React.SetStateAction<number>>
@@ -12,6 +13,8 @@ interface CountriesProps {
 }
 
 const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continentIsReadyToFetch, setContinent}) => {
+    const {t} = useTranslation()
+
     const {fetchCountries} = useDispatchCountries()
 
     const {countries, loadingCountries, errorCountries} = useSelector(fetchCountriesSelector)
@@ -59,7 +62,7 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
     return (
         <div className={styles.filtersMain}>
             <div className={styles.filters}>
-                <h1>Country:</h1>
+                <h1><Trans t={t}>Country</Trans>:</h1>
                 {continents.map(continent =>
                     <div key={continent} className={styles.listOfCountriesAndContinents}>
                         <div className={styles.continents}>
@@ -68,18 +71,23 @@ const Countries: React.FC <CountriesProps> = ({setCountryID, county_id, continen
                                        id={continent}
                                        name={continent}
                                        checked={continent === continentIsReadyToFetch}
-                                       onChange={handleChangeContinentInput}/> {continent}
+                                       onChange={handleChangeContinentInput}/>
+                                <span> </span>
+                                <Trans t={t}>{continent}</Trans>
                             </span>
                         </div>
                         <div className={styles.countries}>
-                            {countries.length != 0 && continent === continentIsReadyToFetch ? countries.map(country =>
-                                <div key={country.country_id}>
+                            {countries.length != 0 && continent === continentIsReadyToFetch ? countries.map(country => country.name === continent
+                                ? <span key={country.country_id}></span>
+                                : <div key={country.country_id}>
                                     <span>
                                         <input type='checkbox'
                                                id={`${country.country_id}`}
                                                name={`${country.country_id}`}
                                                checked={country.country_id === county_id}
-                                               onChange={handleChangeCountryFilter}/> {country.name}
+                                               onChange={handleChangeCountryFilter}/>
+                                        <span> </span>
+                                        <Trans t={t}>{country.name}</Trans>
                                     </span>
                                 </div>) : <span></span>}
                         </div>

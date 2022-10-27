@@ -9,6 +9,7 @@ import venues from "../../assets/img/venues.jpg";
 import referees from "../../assets/img/referee.jpg";
 import {Link} from "react-router-dom";
 import NewsColumn from "./NewsColumn/NewsColumn";
+import {useTranslation, Trans} from "react-i18next";
 
 interface LinkBoxProps {
     text: string
@@ -17,11 +18,15 @@ interface LinkBoxProps {
 }
 
 const LinkBox: React.FC <LinkBoxProps> = ({text, imageSRC, pathTo}) => {
+    const {t} = useTranslation()
+
     return (
         <Link to={pathTo}>
             <div className={styles.linkBox}>
                 <div>
-                    <p>{text}</p>
+                    <p>
+                        <Trans t={t}>{text}</Trans>
+                    </p>
                 </div>
                 <img src={imageSRC}/>
             </div>
@@ -30,6 +35,8 @@ const LinkBox: React.FC <LinkBoxProps> = ({text, imageSRC, pathTo}) => {
 }
 
 const AppContent: React.FC = () => {
+    const {t} = useTranslation()
+
     useEffect(() => {
         window.scrollTo({behavior: 'smooth', top: 0})
     }, [])
@@ -40,7 +47,9 @@ const AppContent: React.FC = () => {
                 <div className={styles.photoBlock}>
                     <div className={styles.photoBlockInfo}>
                         <div className={styles.photoBlockText}>
-                            <h1>Pet Project: "FUT 23"</h1>
+                            <h1>
+                                <Trans t={t}>petProject</Trans>: "FUT 23"
+                            </h1>
                             <p>API: <a href='https://sportdataapi.com' target='_blank'>sportdataapi.com</a></p>
                         </div>
                         <div className={styles.swimTextBlock}>

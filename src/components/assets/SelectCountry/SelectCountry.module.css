@@ -1,0 +1,11 @@
+.SelectCountry {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectCountry p {
+    font-size: 20px;
+}

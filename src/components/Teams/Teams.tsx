@@ -6,8 +6,12 @@ import Countries from "../Countries/Countries";
 import styles from "./Teams.module.css";
 import PaginationFC from "../assets/Pagination/Pagination";
 import icon from "../../assets/img/account.png";
+import SelectCountry from "../assets/SelectCountry/SelectCountry";
+import {useTranslation, Trans} from "react-i18next";
 
 const Teams: React.FC = () => {
+    const {t} = useTranslation()
+
     const {teams, loadingTeams, errorTeams} = useSelector(getTeamsSelector)
 
     const {fetchTeams} = useDispatchTeams()
@@ -67,8 +71,13 @@ const Teams: React.FC = () => {
                                     <p>{team.name}</p>
                                     <p>{team.short_code}</p>
                                     <p>
-                                        <span className={`fi fi-${team.country.country_code}`}></span>
-                                        {team.country.name}
+                                        <span className={team.country.country_code === 'en' ? `fi fi-gb-eng`
+                                            : team.country.country_code === 'n' ? `fi fi-gb-nir`
+                                                : team.country.country_code === 'w' ? `fi fi-gb-wls`
+                                                    : team.country.country_code === 's' ? `fi fi-gb-sct`
+                                                    : `fi fi-${team.country.country_code}`
+                                        }></span>
+                                        <Trans t={t}>{team.country.name}</Trans>
                                     </p>
                                 </div>
                             )}
@@ -77,11 +86,7 @@ const Teams: React.FC = () => {
                                       totalCount={teams.length} setCurrentPage={setCurrentPage}
                                       setMinIndex={setMinIndex} setMaxIndex={setMaxIndex}/>
                     </div>
-                    : <div className={styles.SelectCountry}>
-                        <p>
-                            Select country
-                        </p>
-                    </div>
+                    : <SelectCountry/>
                 }
             </div>
         </div>

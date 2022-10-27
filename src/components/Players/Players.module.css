@@ -24,18 +24,6 @@
     align-items: center;
 }
 
-.SelectCountry {
-    width: 80%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.SelectCountry p {
-    font-size: 20px;
-}
-
 @media (max-width: 1120px) {
     .playersWrapper {
         grid-template-columns: repeat(3, 50px);

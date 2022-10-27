@@ -5,8 +5,11 @@ import {getPlayerByIdSelector} from "../../../redux/selectors/playersSelector";
 import useDispatchPlayers from "../../../hooks/useDispatchPlayers";
 import {useParams} from "react-router-dom";
 import icon from "../../../assets/img/account.png";
+import {useTranslation, Trans} from "react-i18next";
 
 const PlayerById: React.FC = () => {
+    const {t} = useTranslation()
+
     const params = useParams()
 
     const {player, loading, error} = useSelector(getPlayerByIdSelector)
@@ -33,13 +36,18 @@ const PlayerById: React.FC = () => {
                 <div className={styles.content}>
                     <img src={player.img ? player.img : icon}/>
                     <p>{player.firstname} {player.lastname}</p>
-                    <p>Birthday: {player.birthday ? player.birthday : "No results"}</p>
-                    <p>Age: {player.age ? player.age : "No results"}</p>
-                    <p>Weight: {player.weight ? player.weight + ' kg' : "No results"}</p>
-                    <p>Height: {player.height ? player.height + ' cm' : "No results"}</p>
+                    <p><Trans t={t}>Birthday</Trans>: {player.birthday ? player.birthday : "No results"}</p>
+                    <p><Trans t={t}>Age</Trans>: {player.age ? player.age : "No results"}</p>
+                    <p><Trans t={t}>Weight</Trans>: {player.weight ? <>{player.weight} <Trans t={t}>kg</Trans></> : "No results"}</p>
+                    <p><Trans t={t}>Height</Trans>: {player.height ? <>{player.height} <Trans t={t}>cm</Trans></> : "No results"}</p>
                     <span>
-                        <span className={`fi fi-${player.country.country_code}`}></span>
-                        {player.country.name}
+                        <span className={player.country.country_code === 'en' ? `fi fi-gb-eng`
+                            : player.country.country_code === 'n' ? `fi fi-gb-nir`
+                                : player.country.country_code === 'w' ? `fi fi-gb-wls`
+                                    : player.country.country_code === 's' ? `fi fi-gb-sct`
+                                        : `fi fi-${player.country.country_code}`
+                        }></span>
+                        <Trans t={t}>{player.country.name}</Trans>
                     </span>
                 </div>
             }

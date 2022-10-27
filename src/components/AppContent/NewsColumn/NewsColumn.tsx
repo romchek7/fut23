@@ -4,8 +4,11 @@ import {useSelector} from "react-redux";
 import {getLeagues} from "../../../redux/selectors/leaguesSelector";
 import useDispatchLeagues from "../../../hooks/useDispatchLeagues";
 import {Link} from "react-router-dom";
+import {useTranslation, Trans} from "react-i18next";
 
 const NewsColumn: React.FC = () => {
+    const {t} = useTranslation()
+
     const {leagues, loadingLeagues, errorLeagues} = useSelector(getLeagues)
 
     const {fetchLeagues} = useDispatchLeagues()
@@ -18,11 +21,13 @@ const NewsColumn: React.FC = () => {
         <div className={styles.main}>
             <div className={styles.NewsBlock1}>
                 <p>
-                    Based on your current subscription <span>(Free)</span>, you may subscribe to up to <span>2 leagues</span>.
+                    <Trans t={t}>leagueSubscribeInformation</Trans>
                 </p>
             </div>
             <div className={styles.NewsBlock2}>
-                <h1>My leagues</h1>
+                <h1>
+                    <Trans t={t}>myLeagues</Trans>:
+                </h1>
                 {leagues.length > 0 &&
                     <div className={styles.leagues}>
                         {leagues.map(league =>

@@ -45,18 +45,6 @@
     margin-right: 10px;
 }
 
-.SelectCountry {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.SelectCountry p {
-    font-size: 20px;
-}
-
 @media (max-width: 1120px) {
     .main {
         flex-direction: column;

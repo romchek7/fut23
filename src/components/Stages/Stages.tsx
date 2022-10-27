@@ -3,12 +3,15 @@ import {useSelector} from "react-redux";
 import {getStagesSelector} from "../../redux/selectors/stagesSelector";
 import useDispatchStages from "../../hooks/useDispatchStages";
 import styles from "./Stages.module.css";
+import {Trans, useTranslation} from "react-i18next";
 
 interface StagesProps {
     season_id: number
 }
 
 const Stages: React.FC<StagesProps> = ({season_id}) => {
+    const {t} = useTranslation()
+
     const {stages, loadingStages, errorStages} = useSelector(getStagesSelector)
 
     const {fetchStages} = useDispatchStages()
@@ -31,7 +34,7 @@ const Stages: React.FC<StagesProps> = ({season_id}) => {
             {stages.length > 0
                 ? stages.map((stage, idx) =>
                     <div key={idx}>
-                        {stage.name}
+                        <Trans t={t}>{stage.name}</Trans>
                     </div>
                 )
                 : <p>No results</p>}
