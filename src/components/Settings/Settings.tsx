@@ -1,22 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import styles from "./Settings.module.css";
-import i18n from "i18next";
-import {useTranslation, initReactI18next, Trans} from "react-i18next";
-import * as translationEn from "../../assets/translations/en.json";
-import * as translationUa from "../../assets/translations/ua.json";
-
-i18n.use(initReactI18next).init({
-    resources: {
-        en: {
-            translation: translationEn
-        },
-        ua: {
-            translation: translationUa
-        }
-    },
-    lng: "en",
-    fallbackLng: "en"
-})
+import i18n from "../../i18n";
+import {useTranslation, Trans} from "react-i18next";
 
 const Settings: React.FC = () => {
     const {t} = useTranslation()
@@ -47,7 +32,6 @@ const Settings: React.FC = () => {
                         English
                     </option>
                     <option value='ua'>
-                        <span className={`fi fi-ua`}></span>
                         Українська
                     </option>
                 </select>
