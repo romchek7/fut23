@@ -4,7 +4,6 @@
 }
 
 [data-theme='DARK_THEME'] {
-    --color: rgb(255, 255, 255);
     --selectLanguageBorderColor: rgb(49, 201, 141);
     --selectLanguageColor: rgb(49, 201, 141);
 }

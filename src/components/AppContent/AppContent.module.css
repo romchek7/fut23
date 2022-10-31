@@ -1,3 +1,19 @@
+:root {
+    --swimTextBlock-background-color: rgb(255, 255, 255);
+    --photoBlockInfo-background-color: rgba(14, 82, 53, 0.5);
+    --linkBox-color: black;
+    --linkBox-p-background-color: rgb(255, 255, 255);
+    --linkBox-div-background-color: rgba(49, 201, 141, 0);
+}
+
+[data-theme='DARK_THEME'] {
+    --swimTextBlock-background-color: rgb(18, 25, 29);
+    --photoBlockInfo-background-color: rgba(18, 25, 29, 0.6);
+    --linkBox-color: white;
+    --linkBox-p-background-color: rgb(18, 25, 29);
+    --linkBox-div-background-color: rgba(49, 201, 141, 0.3);
+}
+
 .main {
     width: 100%;
     min-height: 800px;
@@ -27,7 +43,7 @@
 .photoBlockInfo {
     width: 80%;
     height: 500px;
-    background-color: rgba(14, 82, 53, 0.5);
+    background-color: var(--photoBlockInfo-background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +75,7 @@
 .swimTextBlock {
     width: 80%;
     height: 100px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--swimTextBlock-background-color);
     position: absolute;
     bottom: -50px;
     display: flex;
@@ -89,14 +105,13 @@
 }
 
 .linkBox {
-    background-color: #666666;
     width: 250px;
     height: 250px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: var(--linkBox-color);
 }
 
 .linkBox div {
@@ -108,13 +123,14 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: var(--linkBox-div-background-color);
 }
 
 .linkBox div p {
     position: absolute;
     width: 90%;
     height: 50px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--linkBox-p-background-color);
     top: 200px;
     display: flex;
     align-items: center;

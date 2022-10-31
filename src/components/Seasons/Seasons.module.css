@@ -1,3 +1,13 @@
+:root {
+    --tr-background-color: #dddddd;
+    --table-border-color: 1px solid #dddddd;
+}
+
+[data-theme='DARK_THEME'] {
+    --tr-background-color: rgb(37, 54, 61);
+    --table-border-color: 1px solid rgb(37, 54, 61);
+}
+
 .main {
     margin-top: 100px;
     width: 100%;
@@ -5,6 +15,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: var(--linkBox-color);
+}
+
+.main h1 {
+    color: var(--linkBox-color);
 }
 
 .seasons {
@@ -16,10 +31,11 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    color: var(--linkBox-color);
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: var(--table-border-color);
     text-align: left;
     padding: 20px;
 }
@@ -29,7 +45,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: var(--tr-background-color);
 }
 
 @media (max-width: 1251px) {

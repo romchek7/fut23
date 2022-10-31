@@ -7,9 +7,3 @@
     justify-content: center;
     flex-direction: column;
 }
-
-.paginationWrapper select {
-    margin: 20px;
-    border-style: solid;
-    border-color: rgb(14, 82, 53);
-}

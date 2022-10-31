@@ -18,10 +18,15 @@
     flex-direction: column;
 }
 
+.filtersForm div label {
+    color: var(--linkBox-color);
+}
+
 .filtersForm div input {
     margin-bottom: 10px;
     border-radius: 5px;
     border-color: rgb(14, 82, 53);
+    color: black;
 }
 
 @media (max-width: 860px) {

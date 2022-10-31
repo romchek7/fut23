@@ -22,6 +22,11 @@
     width: 100%;
     height: 100px;
     display: flex;
+    color: var(--linkBox-color);
+}
+
+.filterBox input {
+    color: black;
 }
 
 .filterBox1, .filterBox3 {

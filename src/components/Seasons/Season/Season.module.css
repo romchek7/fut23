@@ -38,6 +38,10 @@
     width: 60%;
 }
 
+.fixedSeasonInfo h1, .fixedSeasonInfo p, .infoBlock1 h1, .infoBlock1 {
+    color: var(--linkBox-color);
+}
+
 .seasonsParams {
     width: 80%;
     min-height: 50%;

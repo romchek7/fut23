@@ -10,6 +10,11 @@
     height: 500px;
     width: 70%;
     overflow: auto;
+    color: var(--linkBox-color);
+}
+
+.filters h1 {
+    color: var(--linkBox-color);
 }
 
 .filters::-webkit-scrollbar {

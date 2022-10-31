@@ -1,3 +1,13 @@
+:root {
+    --leagueSubscribeInformation-color: black;
+    --leagues-link-color: rgb(14, 82, 53);
+}
+
+[data-theme='DARK_THEME'] {
+    --leagueSubscribeInformation-color: white;
+    --leagues-link-color: white;
+}
+
 .main {
     width: 100%;
     height: 100%;
@@ -19,12 +29,13 @@
     height: 100%;
 }
 
-.NewsBlock1 p {
-    width: 80%;
+.NewsBlock2 h1 {
+    color: var(--leagueSubscribeInformation-color);
 }
 
-.NewsBlock1 p span {
-    font-weight: bold;
+.NewsBlock1 p {
+    width: 80%;
+    color: var(--leagueSubscribeInformation-color);
 }
 
 .leagues {
@@ -35,7 +46,7 @@
 }
 
 .link {
-    color: rgb(14, 82, 53);
+    color: var(--leagues-link-color);
 }
 
 .link:hover {

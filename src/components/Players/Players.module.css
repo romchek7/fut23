@@ -1,6 +1,7 @@
 .playersMain {
     width: 100%;
     display: flex;
+    color: var(--linkBox-color);
 }
 
 .filtersMain {

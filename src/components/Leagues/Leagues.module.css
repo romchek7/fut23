@@ -12,6 +12,11 @@
     width: 80%;
     margin-left: 20px;
     min-height: 600px;
+    color: var(--linkBox-color);
+}
+
+.content h1 {
+    color: var(--linkBox-color);
 }
 
 .leaguesWrapper {
