@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import styles from "./Settings.module.css";
 import i18n from "../../i18n";
 import {useTranslation, Trans} from "react-i18next";
+import ThemeSwitcher from "../assets/ThemeSwitcher/ThemeSwitcher";
 
 const Settings: React.FC = () => {
     const {t} = useTranslation()
@@ -35,6 +36,9 @@ const Settings: React.FC = () => {
                         Українська
                     </option>
                 </select>
+            </div>
+            <div className={styles.themeSwitcher}>
+                <ThemeSwitcher/>
             </div>
         </div>
     )
