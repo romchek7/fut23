@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fut23/static/css/main.b2804d74.css",
-    "main.js": "/fut23/static/js/main.81d05c8a.js",
+    "main.js": "/fut23/static/js/main.5d69854b.js",
     "static/js/787.81689787.chunk.js": "/fut23/static/js/787.81689787.chunk.js",
     "static/media/photoBlock.jpg": "/fut23/static/media/photoBlock.2858407b0e2501fa8a34.jpg",
     "static/media/bookmakers.jpg": "/fut23/static/media/bookmakers.eb59c6ce5cd531d2f2f2.jpg",
@@ -282,11 +282,11 @@
     "static/media/bd.svg": "/fut23/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/fut23/static/media/id.f624e2c8444a7794b357.svg",
     "main.b2804d74.css.map": "/fut23/static/css/main.b2804d74.css.map",
-    "main.81d05c8a.js.map": "/fut23/static/js/main.81d05c8a.js.map",
+    "main.5d69854b.js.map": "/fut23/static/js/main.5d69854b.js.map",
     "787.81689787.chunk.js.map": "/fut23/static/js/787.81689787.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2804d74.css",
-    "static/js/main.81d05c8a.js"
+    "static/js/main.5d69854b.js"
   ]
 }
