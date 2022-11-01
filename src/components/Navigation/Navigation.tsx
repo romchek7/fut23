@@ -43,7 +43,7 @@ const Navigation: React.FC = () => {
 			</div>
 			<nav className={showMenu ? styles.navMobile : styles.nav}>
 				<LinkNavigation
-					toPath={'/'}
+					toPath={'/fut23'}
 					text='Home'
 					setShowMenu={setShowMenu}
 				/>

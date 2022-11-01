@@ -24,6 +24,7 @@ function App() {
 			<div className='AppContent'>
 				<Routes>
 					<Route path={'/'} element={<AppContent />} />
+					<Route path={'/fut23'} element={<AppContent />} />
 					<Route path={'/players'} element={<Players />} />
 					<Route path={'/leagues'} element={<Leagues />} />
 					<Route path='/seasons' element={<Seasons />}>
