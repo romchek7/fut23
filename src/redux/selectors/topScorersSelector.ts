@@ -1,5 +1,5 @@
-import {AppStateType} from "../reducers/rootReducer";
+import { AppStateType } from '../reducers/rootReducer'
 
 export const getTopScorersSelector = (state: AppStateType) => {
-    return state.topScorersReducer
+	return state.topScorersReducer
 }

@@ -15,7 +15,7 @@ const Venues: React.FC = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [minIndex, setMinIndex] = useState(0)
 	const [maxIndex, setMaxIndex] = useState(12)
-	const [pageSize, setPageSize] = useState(12)
+	const [pageSize] = useState(12)
 	const [county_id, setCountryID] = useState(0)
 	const [continentIsReadyToFetch, setContinent] = useState('')
 
@@ -74,7 +74,6 @@ const Venues: React.FC = () => {
 						)}
 					</div>
 					<PaginationFC
-						setPageSize={setPageSize}
 						pageSize={pageSize}
 						currentPage={currentPage}
 						totalCount={venues.length}

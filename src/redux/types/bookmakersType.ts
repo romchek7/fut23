@@ -1,33 +1,39 @@
 export interface IBookmakers {
-    bookmaker_id: number
-    name: string
-    img: string
+	bookmaker_id: number
+	name: string
+	img: string
 }
 
 export interface IBookmakersState {
-    bookmakers: IBookmakers[]
-    loading: boolean
-    error: null | string
+	bookmakers: IBookmakers[]
+	loading: boolean
+	error: null | string
 }
 
 export enum getBookmakersActionType {
-    FETCH_BOOKMAKERS='FETCH_BOOKMAKERS',
-    FETCH_BOOKMAKERS_SUCCESS='FETCH_BOOKMAKERS_SUCCESS',
-    FETCH_BOOKMAKERS_ERROR='FETCH_BOOKMAKERS_ERROR'
+	// eslint-disable-next-line no-unused-vars
+	FETCH_BOOKMAKERS = 'FETCH_BOOKMAKERS',
+	// eslint-disable-next-line no-unused-vars
+	FETCH_BOOKMAKERS_SUCCESS = 'FETCH_BOOKMAKERS_SUCCESS',
+	// eslint-disable-next-line no-unused-vars
+	FETCH_BOOKMAKERS_ERROR = 'FETCH_BOOKMAKERS_ERROR',
 }
 
 interface FetchBookmakers {
-    type: getBookmakersActionType.FETCH_BOOKMAKERS
+	type: getBookmakersActionType.FETCH_BOOKMAKERS
 }
 
 interface FetchBookmakersSuccess {
-    type: getBookmakersActionType.FETCH_BOOKMAKERS_SUCCESS,
-    payload: any
+	type: getBookmakersActionType.FETCH_BOOKMAKERS_SUCCESS
+	payload: any
 }
 
 interface FetchBookmakersError {
-    type: getBookmakersActionType.FETCH_BOOKMAKERS_ERROR,
-    payload: string
+	type: getBookmakersActionType.FETCH_BOOKMAKERS_ERROR
+	payload: string
 }
 
-export type BookmakersActionType = FetchBookmakers | FetchBookmakersSuccess | FetchBookmakersError
+export type BookmakersActionType =
+	| FetchBookmakers
+	| FetchBookmakersSuccess
+	| FetchBookmakersError

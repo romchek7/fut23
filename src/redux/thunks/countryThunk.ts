@@ -1,33 +1,34 @@
-import {Dispatch} from "redux";
-import {getLeagueActionType, LeagueActionTypes} from "../types/leaguesType";
-import {getCountryAPI, getLeagueAPI} from "../../api/api";
-import {CountryActionTypes, fetchCountryActionTypes} from "../types/countriesType";
+import { Dispatch } from 'redux'
+import { getCountryAPI } from '../../api/api'
+import {
+	CountryActionTypes,
+	fetchCountryActionTypes,
+} from '../types/countriesType'
 
 export const fetchCountry = (country_id: number) => {
-    return async (dispatch: Dispatch<CountryActionTypes>) => {
-        try {
-            dispatch({
-                type: fetchCountryActionTypes.FETCH_COUNTRY
-            })
+	return async (dispatch: Dispatch<CountryActionTypes>) => {
+		try {
+			dispatch({
+				type: fetchCountryActionTypes.FETCH_COUNTRY,
+			})
 
-            let response = null
+			let response = null
 
-            if (country_id) {
-                response = await getCountryAPI(country_id)
-            }
+			if (country_id) {
+				response = await getCountryAPI(country_id)
+			}
 
-            if (response) {
-                dispatch({
-                    type: fetchCountryActionTypes.FETCH_COUNTRY_SUCCESS,
-                    payload: response.data.data
-                })
-            }
-        }
-        catch (e) {
-            dispatch({
-                type: fetchCountryActionTypes.FETCH_COUNTRY_ERROR,
-                payload: `${e}`
-            })
-        }
-    }
+			if (response) {
+				dispatch({
+					type: fetchCountryActionTypes.FETCH_COUNTRY_SUCCESS,
+					payload: response.data.data,
+				})
+			}
+		} catch (e) {
+			dispatch({
+				type: fetchCountryActionTypes.FETCH_COUNTRY_ERROR,
+				payload: `${e}`,
+			})
+		}
+	}
 }

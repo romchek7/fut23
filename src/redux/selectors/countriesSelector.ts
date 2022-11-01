@@ -1,9 +1,9 @@
-import {AppStateType} from "../reducers/rootReducer";
+import { AppStateType } from '../reducers/rootReducer'
 
 export const fetchCountriesSelector = (state: AppStateType) => {
-    return state.countriesReducer
+	return state.countriesReducer
 }
 
 export const fetchCountrySelector = (state: AppStateType) => {
-    return state.countryReducer
+	return state.countryReducer
 }

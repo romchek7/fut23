@@ -1,5 +1,5 @@
-import {AppStateType} from "../reducers/rootReducer";
+import { AppStateType } from '../reducers/rootReducer'
 
 export const getVenuesSelector = (state: AppStateType) => {
-    return state.venuesReducer
+	return state.venuesReducer
 }

@@ -1,9 +1,9 @@
-import {AppStateType} from "../reducers/rootReducer";
+import { AppStateType } from '../reducers/rootReducer'
 
 export const getTeamsSelector = (state: AppStateType) => {
-    return state.teamsReducer
+	return state.teamsReducer
 }
 
 export const getTeamByIdSelector = (state: AppStateType) => {
-    return state.teamReducer
+	return state.teamReducer
 }

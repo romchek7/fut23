@@ -48,7 +48,8 @@ const AppContent: React.FC = () => {
 					<div className={styles.photoBlockInfo}>
 						<div className={styles.photoBlockText}>
 							<h1>
-								<Trans t={t}>petProject</Trans>: `FUT 23`
+								{/* eslint-disable-next-line react/no-unescaped-entities */}
+								<Trans t={t}>petProject</Trans>: "FUT 23"
 							</h1>
 							<p>
 								API:{' '}
