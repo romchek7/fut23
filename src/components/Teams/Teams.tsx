@@ -8,6 +8,7 @@ import PaginationFC from '../assets/Pagination/Pagination'
 import icon from '../../assets/img/account.png'
 import SelectCountry from '../assets/SelectCountry/SelectCountry'
 import { useTranslation, Trans } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Teams: React.FC = () => {
 	const { t } = useTranslation()
@@ -46,7 +47,7 @@ const Teams: React.FC = () => {
 	}, [teams, pageSize])
 
 	if (loadingTeams) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (errorTeams) {

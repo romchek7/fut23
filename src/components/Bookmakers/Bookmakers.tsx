@@ -3,6 +3,7 @@ import styles from './Bookmakers.module.css'
 import { useSelector } from 'react-redux'
 import { getBookmakersSelector } from '../../redux/selectors/bookmakersSelector'
 import useDispatchBookmakers from '../../hooks/useDispatchBookmakers'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Bookmakers: React.FC = () => {
 	const { bookmakers, loading, error } = useSelector(getBookmakersSelector)
@@ -15,7 +16,7 @@ const Bookmakers: React.FC = () => {
 	}, [])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

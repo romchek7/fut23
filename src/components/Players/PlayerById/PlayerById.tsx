@@ -6,6 +6,7 @@ import useDispatchPlayers from '../../../hooks/useDispatchPlayers'
 import { useParams } from 'react-router-dom'
 import icon from '../../../assets/img/account.png'
 import { useTranslation, Trans } from 'react-i18next'
+import Preloader from '../../assets/Preloader/Preloader'
 
 const PlayerById: React.FC = () => {
 	const { t } = useTranslation()
@@ -23,7 +24,7 @@ const PlayerById: React.FC = () => {
 	}, [])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

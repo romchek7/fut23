@@ -3,6 +3,7 @@ import styles from './Markets.module.css'
 import { useSelector } from 'react-redux'
 import { getMarketsSelector } from '../../redux/selectors/marketsSelector'
 import useDispatchMarkets from '../../hooks/useDispatchMarkets'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Markets: React.FC = () => {
 	const { markets, loading, error } = useSelector(getMarketsSelector)
@@ -15,7 +16,7 @@ const Markets: React.FC = () => {
 	}, [])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

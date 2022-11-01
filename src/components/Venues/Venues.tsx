@@ -6,6 +6,7 @@ import PaginationFC from '../assets/Pagination/Pagination'
 import useDispatchVenues from '../../hooks/useDispatchVenues'
 import { getVenuesSelector } from '../../redux/selectors/venuesSelector'
 import SelectCountry from '../assets/SelectCountry/SelectCountry'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Venues: React.FC = () => {
 	const { venues, loading, error } = useSelector(getVenuesSelector)
@@ -42,11 +43,11 @@ const Venues: React.FC = () => {
 	}, [venues])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {
-		return <div>Some error: {error}</div>
+		return <div className={styles.main}>Some error: {error}</div>
 	}
 
 	return (

@@ -9,6 +9,7 @@ import { getLeague } from '../../redux/selectors/leaguesSelector'
 import useDispatchCountry from '../../hooks/useDispatchCountry'
 import { fetchCountrySelector } from '../../redux/selectors/countriesSelector'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Seasons: React.FC = () => {
 	const { t } = useTranslation()
@@ -38,8 +39,8 @@ const Seasons: React.FC = () => {
 		}
 	}, [seasons])
 
-	if (loadingSeasons && loadingLeague && loadingCountry) {
-		return <div>Loading...</div>
+	if (loadingSeasons || loadingLeague || loadingCountry) {
+		return <Preloader />
 	}
 
 	if (errorSeasons && errorLeague && errorCountry) {

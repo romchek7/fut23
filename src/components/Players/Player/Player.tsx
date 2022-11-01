@@ -28,7 +28,10 @@ const Player: React.FC<IPlayerProps> = ({ player }) => {
 							: `fi fi-${player.country.country_code}`
 					}
 				></span>
-				<img src={player.img ? player.img : icon} />
+				<img
+					src={player.img ? player.img : icon}
+					alt={player.firstname}
+				/>
 			</div>
 			<Link to={`/player/${player.player_id}`} target='_blank'>
 				<p>

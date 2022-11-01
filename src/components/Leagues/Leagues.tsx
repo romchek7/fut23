@@ -7,6 +7,7 @@ import Countries from '../Countries/Countries'
 import { ILeague } from '../../redux/types/leaguesType'
 import { NavLink } from 'react-router-dom'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 interface LeagueProps {
 	leagues: ILeague[]
@@ -59,7 +60,7 @@ const Leagues: React.FC = () => {
 	}, [county_id])
 
 	if (loadingLeagues) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (errorLeagues) {

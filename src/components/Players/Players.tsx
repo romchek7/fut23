@@ -8,6 +8,7 @@ import PaginationFC from '../assets/Pagination/Pagination'
 import Countries from '../Countries/Countries'
 import AgeFilters from './AgeFilters/AgeFilters'
 import SelectCountry from '../assets/SelectCountry/SelectCountry'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Players: React.FC = () => {
 	const { fetchPlayers } = useDispatchPlayers()
@@ -50,7 +51,7 @@ const Players: React.FC = () => {
 	}, [players])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

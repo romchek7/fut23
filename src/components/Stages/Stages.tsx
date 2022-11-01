@@ -4,6 +4,7 @@ import { getStagesSelector } from '../../redux/selectors/stagesSelector'
 import useDispatchStages from '../../hooks/useDispatchStages'
 import styles from './Stages.module.css'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 interface StagesProps {
 	season_id: number
@@ -23,7 +24,7 @@ const Stages: React.FC<StagesProps> = ({ season_id }) => {
 	}, [])
 
 	if (loadingStages) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (errorStages) {

@@ -5,6 +5,7 @@ import { getTopScorersSelector } from '../../redux/selectors/topScorersSelector'
 import useDispatchTopScorers from '../../hooks/useDispatchTopScorers'
 import styles from './TopScorers.module.css'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 const TopScorers: React.FC = () => {
 	const { t } = useTranslation()
@@ -23,7 +24,7 @@ const TopScorers: React.FC = () => {
 	}, [])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

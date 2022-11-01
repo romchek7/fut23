@@ -6,6 +6,7 @@ import useDispatchTeams from '../../hooks/useDispatchTeams'
 import { getTeamsSelector } from '../../redux/selectors/teamsSelector'
 import styles from './Standings.module.css'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 interface StandingsProps {
 	season_id: number
@@ -28,7 +29,7 @@ const Standings: React.FC<StandingsProps> = ({ season_id, country_id }) => {
 	}, [])
 
 	if (loading || loadingTeams) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error || errorTeams) {

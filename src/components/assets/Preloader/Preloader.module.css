@@ -1,0 +1,17 @@
+:root {
+    --preloaderColor: rgb(14, 82, 53);
+}
+
+[data-theme='DARK_THEME'] {
+    --preloaderColor: rgb(49, 201, 141);
+}
+
+.main {
+    display: flex;
+    min-height: 600px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--preloaderColor);
+    font-size: 100px;
+}

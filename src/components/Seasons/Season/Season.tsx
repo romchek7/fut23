@@ -10,6 +10,7 @@ import Stages from '../../Stages/Stages'
 import Matches from '../../Matches/Matches'
 import Standings from '../../Standings/Standings'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../../assets/Preloader/Preloader'
 
 const Season: React.FC = () => {
 	const { t } = useTranslation()
@@ -37,8 +38,8 @@ const Season: React.FC = () => {
 		}
 	}, [season])
 
-	if (loadingSeason && loadingLeague) {
-		return <div>Loading...</div>
+	if (loadingSeason || loadingLeague) {
+		return <Preloader />
 	}
 
 	if (errorSeason && errorLeague) {

@@ -7,6 +7,7 @@ import useDispatchReferees from '../../hooks/useDispatchReferees'
 import PaginationFC from '../assets/Pagination/Pagination'
 import icon from '../../assets/img/account.png'
 import SelectCountry from '../assets/SelectCountry/SelectCountry'
+import Preloader from '../assets/Preloader/Preloader'
 
 const Referees: React.FC = () => {
 	const { referees, loading, error } = useSelector(getRefereesSelector)
@@ -43,7 +44,7 @@ const Referees: React.FC = () => {
 	}, [referees])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (error) {

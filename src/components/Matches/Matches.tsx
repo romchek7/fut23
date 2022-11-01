@@ -4,6 +4,7 @@ import { getMatchesSelector } from '../../redux/selectors/matchesSelector'
 import useDispatchMatches from '../../hooks/useDispatchMatches'
 import styles from './Matches.module.css'
 import { Trans, useTranslation } from 'react-i18next'
+import Preloader from '../assets/Preloader/Preloader'
 
 interface MatchesProps {
 	season_id: number
@@ -64,7 +65,7 @@ const Matches: React.FC<MatchesProps> = ({
 	}
 
 	if (loadingMatches) {
-		return <div>Loading...</div>
+		return <Preloader />
 	}
 
 	if (errorMatches) {
