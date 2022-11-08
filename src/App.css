@@ -16,3 +16,21 @@ a {
         margin-top: 0;
     }
 }
+
+@media (min-width: 2800px) {
+    .AppContent {
+        min-height: 1500px;
+    }
+}
+
+@media (min-width: 3300px) {
+    .AppContent {
+        min-height: 2000px;
+    }
+}
+
+@media (min-width: 3800px) {
+    .AppContent {
+        min-height: 2500px;
+    }
+}
