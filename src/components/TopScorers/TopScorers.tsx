@@ -78,7 +78,6 @@ const TopScorers: React.FC = () => {
 								<td data-label={`${t('Name')}`}>
 									<Link
 										to={`/player/${topScorer.player.player_id}`}
-										target='_blank'
 									>
 										<p>{topScorer.player.player_name}</p>
 									</Link>

@@ -33,7 +33,7 @@ const Player: React.FC<IPlayerProps> = ({ player }) => {
 					alt={player.firstname}
 				/>
 			</div>
-			<Link to={`/player/${player.player_id}`} target='_blank'>
+			<Link to={`/player/${player.player_id}`}>
 				<p>
 					{player.firstname} {player.lastname}
 				</p>
