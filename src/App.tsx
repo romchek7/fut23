@@ -16,6 +16,21 @@ import Markets from './components/Markets/Markets'
 import Referees from './components/Referees/Referees'
 import Venues from './components/Venues/Venues'
 import Settings from './components/Settings/Settings'
+import {
+	home,
+	players,
+	player,
+	leagues,
+	markets,
+	bookmakers,
+	season,
+	seasons,
+	referees,
+	teams,
+	venues,
+	settings,
+	topScorers,
+} from './components/assets/Links/Links'
 
 function App() {
 	return (
@@ -23,27 +38,27 @@ function App() {
 			<Navigation />
 			<div className='AppContent'>
 				<Routes>
-					<Route path={'/fut23'} element={<AppContent />} />
-					<Route path={'/players'} element={<Players />} />
-					<Route path={'/leagues'} element={<Leagues />} />
-					<Route path='/seasons' element={<Seasons />}>
+					<Route path={home} element={<AppContent />} />
+					<Route path={players} element={<Players />} />
+					<Route path={leagues} element={<Leagues />} />
+					<Route path={seasons} element={<Seasons />}>
 						<Route path=':league_id' element={<Seasons />} />
 					</Route>
-					<Route path='/season' element={<Season />}>
+					<Route path={season} element={<Season />}>
 						<Route path=':season_id' element={<Season />} />
 					</Route>
-					<Route path={'/teams'} element={<Teams />} />
-					<Route path={'/topScorers'} element={<TopScorers />}>
+					<Route path={teams} element={<Teams />} />
+					<Route path={topScorers} element={<TopScorers />}>
 						<Route path=':season_id' element={<TopScorers />} />
 					</Route>
-					<Route path={'/player'} element={<PlayerById />}>
+					<Route path={player} element={<PlayerById />}>
 						<Route path=':player_id' element={<PlayerById />} />
 					</Route>
-					<Route path={'/bookmakers'} element={<Bookmakers />} />
-					<Route path={'/markets'} element={<Markets />} />
-					<Route path={'/referees'} element={<Referees />} />
-					<Route path={'/venues'} element={<Venues />} />
-					<Route path={'/settings'} element={<Settings />} />
+					<Route path={bookmakers} element={<Bookmakers />} />
+					<Route path={markets} element={<Markets />} />
+					<Route path={referees} element={<Referees />} />
+					<Route path={venues} element={<Venues />} />
+					<Route path={settings} element={<Settings />} />
 				</Routes>
 			</div>
 			<Footer />

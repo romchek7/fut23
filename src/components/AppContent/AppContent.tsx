@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 import styles from './AppContent.module.css'
 import teamPhoto from '../../assets/img/team.jpg'
 import leaguesPhoto from '../../assets/img/leagues.jpg'
@@ -17,7 +17,7 @@ interface LinkBoxProps {
 	pathTo: string
 }
 
-const LinkBox: React.FC<LinkBoxProps> = ({ text, imageSRC, pathTo }) => {
+const LinkBox: React.FC<LinkBoxProps> = memo(({ text, imageSRC, pathTo }) => {
 	const { t } = useTranslation()
 
 	return (
@@ -32,7 +32,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({ text, imageSRC, pathTo }) => {
 			</div>
 		</Link>
 	)
-}
+})
 
 const AppContent: React.FC = () => {
 	const { t } = useTranslation()

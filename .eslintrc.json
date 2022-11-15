@@ -27,6 +27,7 @@
         "prettier/prettier": ["error", {
             "endOfLine":"auto"
         }],
+        "react/display-name": "off",
         "react/prop-types": 0
     }
 }

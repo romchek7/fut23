@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom'
 import styles from './Navigation.module.css'
 import { MenuOutlined, CloseOutlined, SettingOutlined } from '@ant-design/icons'
 import { Trans, useTranslation } from 'react-i18next'
+import {
+	home,
+	players,
+	leagues,
+	markets,
+	bookmakers,
+	referees,
+	teams,
+	venues,
+	settings,
+} from '../assets/Links/Links'
 
 interface ILinkNavigationProps {
 	toPath: string
@@ -43,47 +54,47 @@ const Navigation: React.FC = () => {
 			</div>
 			<nav className={showMenu ? styles.navMobile : styles.nav}>
 				<LinkNavigation
-					toPath={'/fut23'}
+					toPath={home}
 					text='Home'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/leagues'}
+					toPath={leagues}
 					text='Leagues'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/teams'}
+					toPath={teams}
 					text='Teams'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/players'}
+					toPath={players}
 					text='Players'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/bookmakers'}
+					toPath={bookmakers}
 					text='Bookmakers'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/markets'}
+					toPath={markets}
 					text='Markets'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/referees'}
+					toPath={referees}
 					text='Referees'
 					setShowMenu={setShowMenu}
 				/>
 				<LinkNavigation
-					toPath={'/venues'}
+					toPath={venues}
 					text='Venues'
 					setShowMenu={setShowMenu}
 				/>
 				<Link
-					to={'/settings'}
+					to={settings}
 					className={styles.settings}
 					onClick={() => setShowMenu(false)}
 				>
