@@ -3,13 +3,22 @@ import styles from './AppContent.module.css'
 import teamPhoto from '../../assets/img/team.jpg'
 import leaguesPhoto from '../../assets/img/leagues.jpg'
 import playersPhoto from '../../assets/img/players.jpg'
-import bookmakers from '../../assets/img/bookmakers.jpg'
-import markets from '../../assets/img/markets.jpg'
-import venues from '../../assets/img/venues.jpg'
-import referees from '../../assets/img/referee.jpg'
+import bookmakersPhoto from '../../assets/img/bookmakers.jpg'
+import marketsPhoto from '../../assets/img/markets.jpg'
+import venuesPhoto from '../../assets/img/venues.jpg'
+import refereesPhoto from '../../assets/img/referee.jpg'
 import { Link } from 'react-router-dom'
 import NewsColumn from './NewsColumn/NewsColumn'
 import { useTranslation, Trans } from 'react-i18next'
+import {
+	players,
+	leagues,
+	markets,
+	bookmakers,
+	referees,
+	teams,
+	venues,
+} from '../assets/Links/Links'
 
 interface LinkBoxProps {
 	text: string
@@ -73,37 +82,37 @@ const AppContent: React.FC = () => {
 					<LinkBox
 						text={'Leagues'}
 						imageSRC={leaguesPhoto}
-						pathTo={'/leagues'}
+						pathTo={leagues}
 					/>
 					<LinkBox
 						text={'Teams'}
 						imageSRC={teamPhoto}
-						pathTo={'/teams'}
+						pathTo={teams}
 					/>
 					<LinkBox
 						text={'Players'}
 						imageSRC={playersPhoto}
-						pathTo={'/players'}
+						pathTo={players}
 					/>
 					<LinkBox
 						text={'Bookmakers'}
-						imageSRC={bookmakers}
-						pathTo={'/bookmakers'}
+						imageSRC={bookmakersPhoto}
+						pathTo={bookmakers}
 					/>
 					<LinkBox
 						text={'Markets'}
-						imageSRC={markets}
-						pathTo={'/markets'}
+						imageSRC={marketsPhoto}
+						pathTo={markets}
 					/>
 					<LinkBox
 						text={'Venues'}
-						imageSRC={venues}
-						pathTo={'/venues'}
+						imageSRC={venuesPhoto}
+						pathTo={venues}
 					/>
 					<LinkBox
 						text={'Referees'}
-						imageSRC={referees}
-						pathTo={'/referees'}
+						imageSRC={refereesPhoto}
+						pathTo={referees}
 					/>
 				</div>
 			</div>
