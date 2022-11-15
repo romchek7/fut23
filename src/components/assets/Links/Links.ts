@@ -1,4 +1,4 @@
-export const home = '/fut23/'
+export const home = '/'
 
 export const players = `${home}players`
 
